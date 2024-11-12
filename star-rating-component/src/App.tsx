@@ -5,7 +5,7 @@ const App = () => {
   const [ratingCount, setRatingCount] = useState(0);
   const handleRatingChange = (count : number) => {
     setRatingCount(count);
-    console.log(`user give rating ${ratingCount}`);
+    console.log(`User give rating ${ratingCount}`);
   }
   return (
     <div className=" bg-slate-800 w-full h-screen flex items-center justify-center p-1">
