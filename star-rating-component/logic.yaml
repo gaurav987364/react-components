@@ -1,0 +1,43 @@
+// making the start rating component in react (reuseable banana hai)
+5 start chaiye ;
+hover par fill caiye preview;
+onclick par star fill krwa dena hai 
+
+// hame ek state banani padegi for userRating count ke liye ki user ne kitna rate kiya.
+// // hmne 2 state banai start component me ek me hm set kr rhe hai hamari value of start clikced by user 
+and ek me hm set kr rhe hai is hovered ki value 
+
+// ek callback function banayege jisme hm onrate me count number bjege through lifting up the state 
+// length set krege or check lagayege ek ki lenght 1 se kam or 7 se jayada nahi honi chaiye 
+//
+
+this is our main logic code : =>
+
+ {Array.from({length}, (_,i)=> (
+    <div key={i} className={`cursor-pointer hover:text-yellow-500`}>
+        <BsFillStarFill  
+            size={size} 
+            onClick={()=>handleRating(i + 1)}
+            onMouseEnter={()=>setHovered(i + 1)}
+            onMouseLeave={()=>setHovered(0)}
+            color={isRated >= i + 1? color : hovered >= i + 1? color : "white"}
+        />
+    </div>
+))}
+
+. first hmne hamari enght ke basis pe ek star array create kiya and react-icon se star render karwaya
+
+. usme lenght , size , color set kiya 
+
+. onclick set the index of the fisrt element of the array i + 1 becoz index start from 0 so we dont want 0-4 we want 1-5 then we set the state me i+1;
+
+. ondouble click set the index again 0
+
+. onMouseEnter and onMouseLeave set the state me hovered with the index of the first element of the array i + 1; and on leave pe again 0 set krdi state 
+
+. main condition check
+
+. if the user is already rated then color set krdi to yellow
+. if the user is hovering then color set krdi to yellow
+
+isRated >= i+1 ? color : hovered >= i+1 ? color : 'white';

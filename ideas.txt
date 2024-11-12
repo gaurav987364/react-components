@@ -1,0 +1,33 @@
+// understand and revised some js concepts and start doing making components.
+target 2 in one day.
+
+1. Star Rating Component - Display and capture a star rating input from users.
+2. Dropdown Menu - A dropdown menu with support for multi-level options and keyboard navigation.
+3. Pagination Component - Pagination controls for navigating through lists.
+4. Accordion - A collapsible accordion with multiple sections and smooth animations. + see more or see less. also
+5. Search Box with Autocomplete - A search input with dynamic suggestions as the user types.{apna techflow wala type}
+6. Tag Input - An input field where users can add and remove tags.{textflow type}
+7. Tab bar switch functionality between 3-4 tabs.
+8. Step-by-Step Form Wizard - A multi-step form with navigation between steps.
+9. Infinite Scrolling List - A list that loads more items as the user scrolls down.
+10.Filterable and Sortable Table - A table with options to filter and sort data.
+11.Comment Section with Replies - A threaded comment section with nested replies.
+12.Basic ai chat bot with open ai.api
+13.Drag-and-Drop File Manager - A file manager that supports drag-and-drop functionality.
+14.Image Crop and Preview - An image upload component with crop and preview functionality.
+15.Theme Switcher - A theme switcher to toggle between light and dark modes.{{apna techflow wala ek dum}}
+16.context api se ek small app.
+17.redux toolkit se small app.
+18 Tanstack query se ek app.
+19.Checkout Form with Payment Integration - A checkout form with support for different payment methods.{{Both :: Stripe and Razorpay}}.
+20.Authentication Flow - Login, register, and reset password components with validation.{{in next Auth + Clerk practise again}} + webHooks  practise
+21.Multipage form in next js/ react.
+22.zod velidations + typescripts
+23.composition in react?
+24.sepration fo concerns(view,integration,service)?
+25.Dependency injection(Ioc)?
+26.Lazy load and suspence?
+27.zustand seekhlo maann kre to?
+28.How to test (Jest or something)?
+
+// Theory Questions of React/Nextjs ?
