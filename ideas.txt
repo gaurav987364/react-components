@@ -2,7 +2,7 @@
 target 2 in one day.
 
 1. Star Rating Component - Display and capture a star rating input from users.✅
-2. Dropdown Menu - A dropdown menu with support for multi-level options and keyboard navigation.
+2. Dropdown Menu - A dropdown menu with support for multi-level options ✅
 ..Navbar-responsive with all options
 3. Pagination Component - Pagination controls for navigating through lists.
 4. Accordion - A collapsible accordion with multiple sections and smooth animations. + see more or see less. also
