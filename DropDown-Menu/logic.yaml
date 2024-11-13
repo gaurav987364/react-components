@@ -1,0 +1,37 @@
+// simply make the ui first like one main components jispe clcick hoga and other is content components ;
+
+main one is act as button toggle type 
+second one is the content div jisme children hinge alag alag .
+
+make one usestate for handel open and setopen,
+open k base par hm jo content div hai uski opacity se khelnge and toggle kareenge.
+
+content ko dynamic rakh lege and alag se ek small component bana kr usme render karlege children ko and uspe hover laga lenge 
+
+.. main logic of close the menu from outside click is
+// first we take two things useref and useeffect
+// attch useref on main dropdown div :
+ab idhar yaad rakhna typescript error ayga varna  KI HME JAB USEREF LENGE TO USKE TYPE GENERIC ME HM USEREF<HTMLDIVELEMENT>(NULL); AND NULL KO AS INITIAL SET KAREGE 
+
+// USEEFFCT ME EK HANDELCLICKOUSIDE function banayege jisme hm simple ek event lekar chalngee e : Event type bhi batana padega hame
+
+// isme ab hm chekc krege ki hamare dropdown div par koi node attach hai ya nhi agar nhi hai to hm perform krege :
+
+useEffect(()=>{
+const handelOutSideClick = (e : Event)=>{
+if(dropdownRef.current && dropdownRef.current.contains(e.target as Node )) // as node isliye set krna hai kyuki contain vahi reciebe krta hau
+{
+  setOpen(false);
+}
+},
+
+document.addEventListener('click',handelOutSideClick);
+// good practise hai outside clikck ko clear krna 
+return ()=>{
+  document.removeEventListener('click',handelOutSideClick);
+}
+},[]);}
+},[dropdown])
+
+
+// postion wali chij work nahi kr rahi hai page ke anadar wali
