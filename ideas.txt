@@ -5,7 +5,7 @@ target 2 in one day.
 2. Dropdown Menu - A dropdown menu with support for multi-level options ✅
 ..Navbar-responsive with all options
 3. Pagination Component - Pagination controls for navigating through lists.
-4. Accordion - A collapsible accordion with multiple sections and smooth animations. + see more or see less. also
+4. Accordion - A collapsible accordion with multiple sections and smooth animations.✅ + see more or see less. also
 5. Search Box with Autocomplete - A search input with dynamic suggestions as the user types.{apna techflow wala type}
 6. Tag Input - An input field where users can add and remove tags.{textflow type}
 7. Tab bar switch functionality between 3-4 tabs.
