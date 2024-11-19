@@ -1,0 +1,53 @@
+Q-> Name the thing that need for working out these methods like forEach, map, filers, etc?
+we know all are array methods but there is one thing that must be in the array for initialization of those methods 
+Anwers: index of array
+
+Q -> why these methods not work direclty when we create an array from new Array method?
+Answer : when we create an array using new Array() method , array is created but their indexces are not initializes so these method not work; for eg;
+
+let arr = new Array(5);
+arr.forEach(num => (console.log(num))) // [empty × 5]
+
+[...arr].forEach(num => (console.log(num))) // output 1,2,3,4,5..
+
+// or we use the fill() method;
+
+// now talk about otp component
+
+.hamne input me value={allOtp[i]} // ye isliye kiya hai agar hm index na dee to simpley hme ek input me sabhi value print hoti dikhai degi and hm chate hai ki index ke according value set ho
+
+. ham onChange use nhi kr rahe hai to set values hm onKeyUp use karege to hm jo handler banayge usme bhi hme e.targte.value nhi krna hai usme hme e.key krna hota hai 
+
+.yaad rakho hmne onKeyUp me handler me direct index bja hai not we use arrow function kyuki upar bhi hamne normal function banaya hai not arror and currying ka concept use kiya hai ek function me value recive krna hai and dusre me use krna uski value ko
+
+// also we not make arror function for handler kyuki hme kuvh return krna tha or hamare arror function me retrun ka alag alag hisab hai
+
+// we set the otp value based on key press into arry index
+
+// but now we do user dont type more than one word into input so, we shift the focus by typeing one character 
+
+// we have to take the reference of all inputs so we justify on which to shift focus ,  : BUT THERE  IS ISSUE LIKE  WE USE MAP FOR CREATE ALL INPUTS SO WE DONT MAKE DIFFERTENT REFS FOR EACH ONE SO WE MAKE ONE ARRAY OF REFS BUT DIRECLTY IS NOT WORKING WE GET ONLY LAST VALUE DUE TO MAP;
+
+ **** so here comes the new concept of react refList.
+ also in ref={} we get the one callback also
+
+// we can easily check for values like they are not numbers or characters key names if(isNaN(key) return;) but check below th backspace ok
+
+// backspace functionality key === "backspace", set input value [index] = ""; , shift focus to i-1, setAllOtp[values], return;
+
+// we easily do similar focus thing by just get key === arrowright, left and shift focus 
+
+
+// some more important functionality
+on input add kro inputMode="numeric"
+** ise hoga yeki jab hm website ko phone me run krege to otp component e jab otp dalege tan by default keyboard number wala appear hoga nahi to normal keyboard ayga , ye krna ek acha ux hai
+
+** autocomplete="one-time-code"
+isse jab mobile devices me otp ayga tab keybord hm open krege to usme vo otp auto suggest hoga 
+
+** read about OTP credentials like autofill using
+navigator.credentials.get
+
+// for copy and paste otp we have function on input onPaste={handelPaste}
+
+const pastedData = e.clipboardData.getData("Text").slice(0,4);
