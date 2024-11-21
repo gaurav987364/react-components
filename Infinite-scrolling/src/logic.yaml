@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <style>
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Mobile first: single column */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Tablet view */
+        @media screen and (min-width: 768px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+            }
+        }
+
+        /* Desktop/Large screen view */
+        @media screen and (min-width: 1024px) {
+            .card-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+            }
+        }
+
+        .card {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- 9 example cards -->
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+        <div class="card">Card 7</div>
+        <div class="card">Card 8</div>
+        <div class="card">Card 9</div>
+    </div>
+</body>
+</html>
+
+
+
+tailwind
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Responsive Grid Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        <!-- 9 example cards -->
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 1</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 2</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 3</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 4</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 5</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 6</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 7</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 8</h3>
+            <p>Card content goes here</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold mb-4">Card 9</h3>
+            <p>Card content goes here</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+// Logic
+
+phle to api me limit and page=1 wali chij important hai 
+then we make ui with display cards limited numbers and render them
+
+
+now for implement the logic of infinite scroll;
+
+// first we need useeffect to attach the handler and run the code when we scroll
+
+// useEffect(()=>{
+window.addEventListener("scroll", handler);
+
+// dont forgot to give clenup function
+return ()=>{
+window.removeEventListener("scroll", listener)
+}
+},[]);
+
+now we make our function
+
+// first we need 3 things about our screen
+
+window.innerHeight;
+document.documentElement.scrollTop
+document.documentElement.scrollHeight
+
+if(window.innerheight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight){
+
+setPage((prev)=> prev+1);
+}
+
+
+// make sure to give page as dependency array in useeffect where wee calll the data function so that everytime page value change it fetch the data again 
+
+..// also give dynamic page value to api ...page=${page}..
+
+// in data fetch funtion we have to update our data by adding prevv one to new one
+
+
+setData((prev)=> [...prev, ...data]);
