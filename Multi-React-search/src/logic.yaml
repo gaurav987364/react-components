@@ -1,0 +1,27 @@
+Changes Needed:
+Track Highlighted Index: Add a highlightIndex state to track the currently focused suggestion.
+
+Handle Keyboard Navigation: Modify the onKeyDown handler to update the highlightIndex when the ArrowUp or ArrowDown keys are pressed and handle selection with the Enter key.
+
+Dynamic Highlighting: Use conditional CSS classes to visually indicate which suggestion is highlighted.
+
+// key points
+what we need?
+* user api for suggestions,
+* pills components,(recieving image, text, onClick which delete user)
+
+implmentation;
+* make two state for get user typing info, an array for saving suggestion data based on user query;
+
+* make ui
+div - relative
+div - relative contains anothr div contains pill rendering and input rendering
+
+ul contain suggestion li
+
+
+**make state for track which user is selected and saved this into a new Set();
+// when we selected a user we have to save there unique thing to our set state means
+setAlreadySetUser([...alreadySetUser, user.email]) // user which is selecet
+
+taking ref of input for shifting focus on user selection
