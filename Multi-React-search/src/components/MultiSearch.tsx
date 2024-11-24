@@ -135,7 +135,7 @@ const MultiSearch = () => {
     <div className="relative w-full max-w-lg rounded-lg">
         <div className="relative">
             {/* Pills */}
-            <div className="flex flex-wrap items-center gap-2 py-2 px-3 bg-gray-200 rounded-lg shadow-lg">
+            <div className="flex flex-wrap items-center gap-2 py-2 px-3 bg-gray-300 rounded-lg shadow-lg">
             {selectedUser?.map((user) => {
                 return (
                 <Pills
