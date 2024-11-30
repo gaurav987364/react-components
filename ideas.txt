@@ -10,7 +10,7 @@ target 2 in one day.
 6. Tag Input - An input field where users can add and remove tags.{textflow type}✅
 7. Tab bar switch functionality between 3-4 tabs.
 8. Step-by-Step Form Wizard - A multi-step form with navigation between steps.
-9. Infinite Scrolling List - A list that loads more items as the user scrolls down.
+9. Infinite Scrolling List✅ - A list that loads more items as the user scrolls down.
 10.Filterable and Sortable Table - A table with options to filter and sort data.
 11.Comment Section with Replies - A threaded comment section with nested replies.
 12.Basic ai chat bot with open ai.api
