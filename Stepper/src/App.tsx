@@ -1,9 +1,11 @@
 import Stepper from "./components/Stepper"
 import "./App.css"
+import StepperByMe from "./components/StepperByMe";
+import Demo from "./components/demo";
 const CHECKOUT_STEPS = [
   {
     name: "Customer Info",
-    Component: () => <div>Provide your contact details.</div>,
+    Component: () => <Demo/>,
   },
   {
     name: "Shipping Info",
@@ -21,7 +23,8 @@ const CHECKOUT_STEPS = [
 const App = () => {
   return (
     <div>
-      <Stepper configs={CHECKOUT_STEPS}/>
+      {/* <Stepper configs={CHECKOUT_STEPS}/> */}
+      <StepperByMe config={CHECKOUT_STEPS}/>
     </div>
   )
 }

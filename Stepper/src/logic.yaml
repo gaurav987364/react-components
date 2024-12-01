@@ -1,0 +1,76 @@
+steps to remember ;;
+
+*initially
+config.length = 4;
+currentStep = 1;
+isComplte = false;
+
+
+//
+sabse phli chij hame simple number or name render krwana hai
+number means index + 1;
+name means {item.name};
+
+logic for show tick opton and active color to blue
+
+currentStep > index + 1 || isComplete ? "✅" : {index+1}
+currentStep === index + 1 ? "bg-blue-600" : "";
+
+button name logic
+currentStep === config.length ? "Finish" : "Next";
+
+//logic for progress bar 
+
+*initially styles
+<div className="absloute top-[10%] left-0 bg-gray-300">
+ <div class="h-full bg-green-500">
+</div>
+
+// now we have to find the width of pregess bar based on div ki width
+// we have to update the size of bar according to all devices
+// calculate progres bar width
+
+const [progressBarStyle, setProgressBarStyle] = useState({left:0, width:0});
+const stepRef = useRef([]);
+
+const updateProgressBarStyle = ()=>{
+  if(stepRef.current.length === config.length){
+    const startStep = stepRef.current[0];
+    const lastStep = stepRef.current[config.length - 1];
+
+    if(startStep && lastStep){
+     const left = startStep.offsetLength + startStep.offseWidth/2
+     const right = lastStep.offsetLength + lastStep.offseWidth/2
+     const width = right - left;
+     setProgressBarStyle({left, width});
+    }
+  }
+}
+
+useeffect(()=>{updateProgressBarStyle()},[stepRef.current, config.length]);
+
+*resize
+useeffect(()=>{
+ const handelResise = ()=> updateProgressBarStyle();
+ window.addEventListener("resize", handelResize);
+
+ return ()=>{
+  window.removeEventListener("resize", handelResize);
+ }
+},[]);
+
+
+const progressBarwidth = ()=>{
+ return ((currentStep - 1) / (config.length -1)) * 100;
+};
+
+// ab hame hamare bar ko update krna hai
+
+
+<div className="absloute top-[10%] left-0 bg-gray-300" style={{
+  left: `${progressBarStyle.left}px`,
+  width: `${progressBarStyle.width}px`,
+  position:"absloute"
+}}>
+ <div class="h-full bg-green-500" style={{width: `${progressBarwidth}%`}}></div>
+</div>
