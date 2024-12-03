@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dragenter{
+    background-color: rgba(17, 239, 13, 0.258);
+}
