@@ -31,4 +31,7 @@ target 2 in one day.
 27.zustand seekhlo maann kre to?
 28.How to test (Jest or something)?
 
+//? Throttling in react js and there different b/w debouncing in react?
+//? vs code side bar folder clone along with create functionalty and drag and drop also of files and further on.....?
+
 // Theory Questions of React/Nextjs ?
