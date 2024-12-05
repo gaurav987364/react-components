@@ -25,6 +25,7 @@ const NestedComm = () => {
     const [editId, setEditId] = useState<number | null>(null);
     const [editText, setEditText] = useState<string>("");
 
+    //? setter, caller, worker
     //add comment and reply to
     const handelAddComments = ()=>{
         if(!input.trim()) return;
@@ -63,7 +64,6 @@ const NestedComm = () => {
         })
     };
     
-
     //delete
     const handleDelete = (id: number) => {
         const updatedComments = deleteComment(comments, id);
