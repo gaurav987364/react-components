@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react"
 import Card from "./Card";
 
@@ -10,6 +11,7 @@ const Home = () => {
     const [data, setData] =  useState<Post[]>([]);
     const [page, setPage] = useState(1);
 
+    console.log("scroll is firedd") // test throttle time
     const getCardData = async ()=>{
        try {
         const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=9&_page=${page}`);
@@ -39,15 +41,39 @@ const Home = () => {
             console.log(error);
             throw error;
         }
-    }
+    };
 
-    useEffect(()=>{
-        window.addEventListener("scroll", handelInfiniteScroll)
+    const throttle = (func: Function, limit: number) => {
+        let lastFunc: any;
+        let lastRan: number;
+      
+        return function (...args: any) {
+          const context = this;
+          if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(() => {
+              if (Date.now() - lastRan >= limit) {
+                func.apply(context, args);
+                lastRan = Date.now();
+              }
+            }, limit - (Date.now() - lastRan));
+          }
+        };
+      };
+      
 
-        return ()=>{
-            window.removeEventListener("scroll", handelInfiniteScroll)
-        }
-    },[])
+      useEffect(() => {
+        const throttledScroll = throttle(handelInfiniteScroll, 200); // 200ms limit
+        window.addEventListener("scroll", throttledScroll);
+      
+        return () => {
+          window.removeEventListener("scroll", throttledScroll);
+        };
+      }, []);
+      
   return (
     <div className="home">
         {data?.map((item,i)=>(

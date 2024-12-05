@@ -152,3 +152,13 @@ setPage((prev)=> prev+1);
 
 
 setData((prev)=> [...prev, ...data]);
+
+
+// implementing the throttling function;;;;
+
+What is Throttling?
+In your infinite scroll functionality, the scroll event triggers the handelInfiniteScroll function very frequently as the user scrolls. This can cause:
+
+Performance issues due to excessive function calls.
+Potential for multiple unnecessary API calls.
+Throttling ensures that handelInfiniteScroll is executed at fixed intervals (e.g., every 200ms) even if the scroll event fires continuously.
