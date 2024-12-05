@@ -149,7 +149,7 @@ const Comments: React.FC = () => {
               </button>
             </div>
           </div>
-        )}
+         )} 
         {renderComments(comment.replies)}
       </div>
     ));

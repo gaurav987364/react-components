@@ -1,0 +1,17 @@
+Bhaut important or complex data structures ki problem hai ye ;
+step-by-step follow karege ;;
+
+step-1 ==> Making the ui part first ;
+*heading 
+*textarea
+*button for add comment;
+** div{renderComments(comments)}; 
+for render your comments you need to pass and function by giving prop your comments array;
+
+
+step-2 ==> Create a state for comments array;
+interface Comments {id:number, text:string, replies:[]}; this is for typescript
+
+const [comments, setComments] = usestate<Comments[]>([
+ {id:1, text:"first cooment", replies:[{id:2, text:"heelo 1", replies:[]}]},
+]);
