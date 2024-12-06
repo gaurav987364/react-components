@@ -1,0 +1,74 @@
+onDragStart => jaha se item ko drag krna shuru hoga ye function trigger hoga 
+
+onDrop => jaha pe item ko drop karege ye evenet tab trigger hoga;
+
+onDragOver => jaha pe item ko drag krna k liye allow karege ye evenet tab trigger hoga; basiclly kisi dragged item jo ara hai us ko detect ke liye 
+
+for sending or recieving files or data in drag and drop;;
+
+e.dataTransfer.setData("cardId \or jo bhi data bjeheg just unique string", card.id);
+
+e.dataTransfer.getData("cardId \or jo bhi", card.id);
+
+
+// basically drag and drop is a game of mainly 4 functions
+
+*onDragStart
+*onDragOver
+*onDrop
+*onDragLeave
+
+
+*Things to remeber make sure to make draggable to to true on card and attach other hander function on column
+
+// drag on single column ;
+we take 2 states one for store item, and other for index;
+onDragStart we set the item to the state;
+onDragOver we set the index to the state
+onDrop=> we just write the logic 
+[
+  let updatedCard/copy = [...cards];
+  let [draggedCard] = updatedCards.splice(draggedItem,1);
+  updatedCards.splice(index,0,draggedCard);
+  setCards(updatedCards);
+  else statse to null
+]
+onDragLeave we just set the states to previous ok;;
+
+// drag on multiple columns;
+onDragStart => we just attach this handler to the card and send a callback with e,{cardObject=id,title,column}
+
+onDragStart(e,card)=>{
+ e.dataTransfer.setData("cardid", card.id);
+};
+
+onDragOver(e)=>{e.preventDefault(), setActive(true)};
+
+onDrop(e)=>{
+  let cardId = e.dataTransfer.getData("cardId");
+
+  let copy = [...cards];
+  let cardToTransfer = copy.find(c => c.id === cardId);
+  if(!cardToTransfer) return;
+  cardToTransfer = {...cardToTransfer, column};
+
+  //update the previous column place/index; doing by update copy
+  copy = copy.filter(c => c.id !== cardId);
+  copy.push(cardToTransfer)
+  setCards(copy);
+  setActive(false);
+}
+
+onDragLeave()=>{setActive(false);}
+
+
+*Now there is issue that we cant sen the position highlighted or we just drag the element to only last position but we want to set it at any position;;
+
+
+sabse phele ek getIndicators funtion banagea jo hmane sabhi spots ko dega on calling the function 
+
+// now we have to find the nearest indicator 
+*ye function call hoga on drop par
+// as we see hame bhaut sare indicator mil re the after getindicators() function call;; but wee have to find nearest and pput the item on paritcular index ;
+
+getNearestIndicator(e,indicator)=>
