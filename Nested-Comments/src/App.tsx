@@ -1,4 +1,5 @@
 import Commentgpt from './components/Comentgpt'
+import Comments from './components/Comments2';
 import NestedComm from './components/NestedComm';
 import Practice from './components/Practice';
 
@@ -7,7 +8,8 @@ const App = () => {
     <div>
       {/* <Commentgpt/> */}
       <NestedComm/>
-      <Practice/>
+      {/* <Practice/> */}
+      <Comments/>
     </div>
   )
 }
