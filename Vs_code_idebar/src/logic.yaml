@@ -1,0 +1,109 @@
+*ui of vs code side bar
+*create folder/files
+*nested hierarchy with design
+*onselect pe creation of folder and files
+*not creating file/folder inside file
+*changing color of file/folder after select
+*folder comes first then files (Sorting)
+*open and close file/folder > arrows
+*update folder/files
+*delete folder/files
+*drag and drop files and folders
+*add extension ke based par images to file/folder
+*prevent user-select-text
+*add structure to local storage so that dont go anywhere on refresh page
+*add some download layout structure on click so that crate foldeer structure like this;
+and so on ........
+
+Root/
+  ├── src/
+  │     ├── images/
+  │     ├── components/
+  │     ├── app.js
+  ├── public/
+  │     ├── favicon.ico
+
+
+
+step-1 me ham simple based on our arcitecture in usestate hm ui banayge
+step-2 based on isFolder property we render the tha icon of folder and file wihth name
+
+// hamen recursion follow krna hai yaad rkhna ok;
+// also give some ml-2 pl-2 border-l-2 to file div so that it align right to folder because it is file 
+
+// ab hme active or setcactive set krna hai hai basically but there is a problem of event bubbling so we have to do e.stopPropagation(); on toggles
+
+// logic smajaho idhar thoda phle
+hmne ek state banai to store the item.id so logic hai recieve the id in callback and check with prev value if exit set to null on again click and if not them set to id
+
+setActiveId(pv => pv.id === id ? null : id);
+
+or check laga lege niche hamare map me ki id is matching or not if matching then set state to activeid and else null
+const isActive = activeId === item.id;
+
+
+// now ab hamae activeID mil gayi hai onclick par to hm uske basis pe ek new folder/file banayge  just like reply to any comment based on reply id
+
+// simple rule smajho of adding files and folder;
+folder => files add kr skte hai ;
+files => files add nhi kr skte or any folder also;
+
+we have to send the type also in addItem(function) ok
+and recive in the add item function like this
+itemType : "folder" : "file";
+
+we do first check for id match
+we do 2nd check for there is folder inside folder or not like
+if(!folder.isFolder) return null; and goto next line of code;
+
+
+
+.filter(Boolean) as Folder[];
+
+The line .filter(Boolean) as Folder[] is a concise way to remove null or undefined values from an array and assert that the resulting array is of a specific type (Folder[] in this case). Let’s break it down step by step:
+
+1. filter(Boolean)
+The filter method in JavaScript is used to filter out elements from an array based on a provided condition.
+When you pass Boolean as the condition, it works as a shorthand to filter out any "falsy" values. In JavaScript, the following values are considered falsy:
+false
+null
+undefined
+0
+NaN
+"" (empty string)
+So, filter(Boolean) will remove all these values from the array.
+
+*2. Why Use This Here?
+In the addItem function, the recursive logic may return null for certain elements (specifically when attempting to add a folder or file inside a file). As a result, the array may contain some null values after the mapping. The .filter(Boolean) ensures that these null values are removed, leaving only valid Folder objects.
+
+
+*issue inconsistent behavior with hierarchical structure
+when i create a new folder inside a folder it works ok but when i create new file inside folder and then create a again folder inside that parent folder the file come on top folder come below the file there is a issue we want propeerly aligned and intended the left border with file and folder
+
+solution=> we have to sort the array of folders before mapping over it
+adding the level=0 parameter also;  
+const sortedList = [...folder].sort((a,b)=>{
+ if(a.isFolder === b.isFolder) return 0;
+ return a.isFolder? -1 : 1; // why -1 because both a.isFolder and b.isFolder return true means true === true return 0 ok
+ a.isFolder ? -1 means array me 0 index se phle ek stpe -1 means upara ajao when it is true ok 
+
+ means isFolder === true comes at positin -1 in the array
+})
+
+
+//for opening the folder based on icons right and down
+create one state for storing item.id in the Set() so that there is now dupicates allowed
+const [] = useState<Set<number>>(new Set());
+
+// for opening the folder
+const handleToggleOpen = (id: number) => {
+ setIsOpen(prevState => {
+ const updatedValue = new Set(pv);
+ if(updatedValue.has(id)){
+  updatedValue.delete(id);
+ } else {
+  updatedVlaue.add(id);
+ }
+ return updatedValue;
+ });
+};
