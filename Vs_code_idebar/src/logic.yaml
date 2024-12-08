@@ -1,17 +1,17 @@
-*ui of vs code side bar
-*create folder/files
-*nested hierarchy with design
-*onselect pe creation of folder and files
-*not creating file/folder inside file
-*changing color of file/folder after select
-*folder comes first then files (Sorting)
-*open and close file/folder > arrows
-*update folder/files
-*delete folder/files
+*ui of vs code side bar✅
+*create folder/files✅
+*nested hierarchy with design✅
+*onselect pe creation of folder and files✅
+*not creating file/folder inside file✅
+*changing color of file/folder after select✅
+*folder comes first then files (Sorting)✅
+*open and close file/folder > arrows✅
+*update folder/files✅
+*delete folder/files✅
 *drag and drop files and folders
-*add extension ke based par images to file/folder
-*prevent user-select-text
-*add structure to local storage so that dont go anywhere on refresh page
+*add extension ke based par images to file/folder✅
+*prevent user-select-text✅
+*add structure to local storage so that dont go anywhere on refresh page✅
 *add some download layout structure on click so that crate foldeer structure like this;
 and so on ........
 
@@ -107,3 +107,120 @@ const handleToggleOpen = (id: number) => {
  return updatedValue;
  });
 };
+
+
+
+//stroing the folder into local storage
+
+// hme sabse phle hamare folder ko string format me local storge me set krna hai and then fir hme on component mount par local strorage se data get krna  hai hai or set krna hai but with condition chekc like if we have data then set it to state otherwise set default structre
+
+
+{/* {item.isFolder ? (
+                    <FaFolder
+                      fill={isActive ? "orange" : "yellow"}
+                      className="inline-block mr-1"
+                    />
+                  ) : (
+                    <FaRegFileAlt
+                      fill={isActive ? "orange" : "white"}
+                      className="inline-block mr-1"
+                    />
+                  )} */}
+
+
+//Logic fro perform drag and drop operation in to our project ;;
+
+1. moveItem Function Ka Overview
+Yeh function do kaam karta hai:
+
+Drag ki gayi item ko uski current location se remove karna.
+Us item ko target folder ke andar add karna.
+Yeh recursively folder ke andar jaake draggedId ko dhoondta hai aur:
+
+Pehle usko nikalta hai (removeItem).
+Fir usko target folder me daalta hai (addItem).
+
+
+
+Step 1: removeItem folder structure ko clean karta hai aur dragged item ko nikalta hai.
+Step 2: addItem dragged item ko target folder me place karta hai.
+Agar draggedItem null hai (kuch bhi valid nahi mila), toh null return hota hai.
+
+
+Important Validations
+Dragged item ko uske current location se hata diya jaata hai.
+Dragged item ko sirf folders ke andar add kar sakte hain, files ke andar nahi.
+Dragging self to self ya invalid targets pe kuch nahi hota.
+
+
+
+7. Final Output
+Ek folder se file uthake dusre folder me daalne par file move ho jaati hai.
+Folder structure intact rehta hai (koi galat overwrite nahi hota).
+Har operation ke baad UI ko update karte hain setFolder ke through;
+
+
+
+
+// In short format
+we have one array called folder.
+we tarck dragged item ki id on dragStart
+we track the drop location id when we come over drop location 
+we use prevent default using onDragOver
+we make one state to store the draggedItemid
+
+workflow=>
+inside onDrop function we just check for conditiions like;;;
+
+1 simply return null when no item is dragged
+2 dont drop item over itself
+3 put only files and folders iinside another folders not in files.
+
+onDrop = (id=TargetId:number)=>
+if(draggesItemId === null) return;
+if(draggedItemId === targetId) return;
+
+//clone the main array
+
+const folderArrayCopy = moveDragItem(folder,targetId,draggedItemtd);
+setFolder(folderArrayCopy);
+setDraggedItemId(null);
+
+// now make moveDragItem function;
+
+const moveDragItem = ():Folder[]=>{};
+if accpet 3 things=>
+folderList: Folder[],
+targetId:number,
+draggedItemId:number,
+
+
+// hm ek variable defiine krege for store the draggedItem info
+
+let draggedItem : Folder | null = null;
+
+define 2 function now removeDragItem from array and addDrag item into array
+
+const removeDragItem = (list:folder[]):folder[]=>{};
+if(folder.id === draggeItemId) if matchs with draggeditem id then simple
+draggedItem = folder; // update our variabe by storing that item
+return false; // then remove that item from that place
+retrun true; fro rest of the items
+ and map karege ab for nested items
+ .map((folder)=>{})
+ retrun {...folder, files:removeDragItem(folder.files)}
+
+const addDragItem = (list:folder[]):folderr[]={}
+
+// it firstly check for folder.id === targetId means droppping location and vo ek folder hai ya nahi
+
+if(folder.id === targetId && folder.isFolder){
+ return {...folder,files:[...folder.files,draggeditem!]}
+} 
+retrun {...folder, files:addDragItem(folder.files)}
+
+const withoutDraggedItem = removeDragItem(folderList);
+if(dragtItem){
+ return addDragItem(withoutDraggedItem)
+}
+return null; //
