@@ -1,5 +1,6 @@
 import Board from './components/Board'
 import KanbanBoard from './components/KanbanBoard'
+import Pin from './components/Pin'
 import Practise from './components/Practise'
 // import DragBoard from './components/DragBoard'
 
@@ -9,7 +10,8 @@ const App = () => {
       {/* <Board/> */}
       {/* <DragBoard/> */}
       {/* <KanbanBoard/> */}
-      <Practise/>
+      {/* <Practise/> */}
+      <Pin/>
     </div>
   )
 }
