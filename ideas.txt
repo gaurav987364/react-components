@@ -16,8 +16,8 @@ target 2 in one day.
 12.Basic ai chat bot with open ai.api
 13.Drag-and-Drop File Manager - A file manager that supports drag-and-drop functionality.List✅
 14.Image Crop and Preview - An image upload component with crop and preview functionality.
-15.Theme Switcher - A theme switcher to toggle between light and dark modes.{{apna techflow wala ek dum}}
-16.context api se ek small app.
+15.Theme Switcher - A theme switcher to toggle between light and dark modes.{{apna techflow wala ek dum}}✅
+16.context api se ek small app.✅
 17.redux toolkit se small app. + middleware thunk also;
 18 Tanstack query se ek app.
 19.Checkout Form with Payment Integration - A checkout form with support for different payment methods.{{Both :: Stripe and Razorpay}}.
