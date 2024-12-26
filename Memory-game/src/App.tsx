@@ -1,10 +1,10 @@
-import Game from './components/Game';
+import Game2 from './components/Game2';
 
 export const data = ["😡","🌚","👽","💀","👻","🦐","🪼","🐦‍⬛",];
 const App = () => {
   return (
     <div className=' w-full h-screen flex items-center justify-center bg-slate-950'>
-     <Game />
+     <Game2 />
     </div>
   )
 }

@@ -28,3 +28,21 @@ transform: rotateY(180deg);
 .card[data-toggle="true"] .back {
 transform: rotateY(0deg);
 }
+
+
+/* 
+// new css of game 2 */
+
+.tab-bar {
+    position: relative;
+  }
+  
+  .tab-item {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tab-item.active {
+    background-color: rgba(128, 128, 128, 0.3);
+    color: #fff;
+  }
+  

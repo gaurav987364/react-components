@@ -1,0 +1,26 @@
+const data = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+# const shuffleArray = ()=>{
+#    let array = [...data, ...data];
+#    let currentIndex = array.length;
+
+#    while(currentIndex !== 0){
+#      const randomIndex = Math.floor(Math.random() * currentIndex);
+#      currentIndex--;
+
+#      [array[currentIndex],array[randomIndex]] = [array[randomIndex],array[currentIndex]];
+#    }
+#    return array;
+# };
+
+
+// new game2 ka generates board functionality
+
+hmne simply based on gameType 4x4 or 6x6 par hmne rows and columns define kiye by checking the type, then hmne fir ek empty board [] define kiya now hme isko ab fill krna hhai with 4x4 or 6x6 arrya se hm karege for loop
+
+for(let i=0; i<ROWS; i++){
+  board.push([]);
+  for(let j=0;j<COLUMN;j++){
+    board[i].push(0);
+  }
+}
