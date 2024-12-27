@@ -27,7 +27,7 @@ export const generateGameboard = (type:GameType): Array<Array<number>> => {
 
 export const insertRandomNumberToBoard = (board:Array<Array<number>>)=>{
     const computedBoard = board;
-    console.log(computedBoard);
+    // console.log(computedBoard);
     let NUM_OF_SPOTS: number;
     let MAX_NUMBERS: number;
 
@@ -54,7 +54,7 @@ export const insertRandomNumberToBoard = (board:Array<Array<number>>)=>{
         }
     };
 
-    console.log(randomSpots);
+    // console.log(randomSpots);
 
     let counter = 2;
     let currentNumber = 1;

@@ -3,7 +3,7 @@ export const toHHMMSS = (numOfSec : number)=>{
     const minutes = Math.floor((numOfSec / 60) % 60);
     const hours = Math.floor((numOfSec / (60 * 60)) % 24);
 
-    console.log(seconds, minutes, hours);
+    // console.log(seconds, minutes, hours);
 
     const secondsPrefix = seconds < 10 ? 0 : "";
     const minutesPrefix = minutes < 10 ? 0 : "";
