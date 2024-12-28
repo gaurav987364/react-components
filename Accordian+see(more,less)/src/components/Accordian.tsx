@@ -2,7 +2,7 @@ import { useState } from "react"
 import Content from "./Content";
 
 const Accordian = () => {
-    const [opem, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     const toggleOpen = () => {
         setOpen((open)=> !open);
     }
@@ -11,7 +11,7 @@ const Accordian = () => {
         <h2>Tite</h2>
         <span onClick={toggleOpen} className="span">➕</span>
 
-        {opem && (
+        {open && (
             <div className=" content">
                 <Content/>
             </div>

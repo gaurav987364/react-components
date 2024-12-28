@@ -156,7 +156,7 @@ const Comments: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-3">
       <h1 className="text-xl font-bold mb-4">Nested Comments</h1>
       <textarea
         value={newComment}

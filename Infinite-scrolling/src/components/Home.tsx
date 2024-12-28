@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react"
+import { ContextType, useEffect, useState } from "react"
 import Card from "./Card";
 
 type Post = {
@@ -43,12 +43,12 @@ const Home = () => {
         }
     };
 
-    const throttle = (func: Function, limit: number) => {
+    const throttle = (func, limit: number) => {
         let lastFunc: any;
         let lastRan: number;
       
         return function (...args: any) {
-          const context = this;
+          const context  = this;
           if (!lastRan) {
             func.apply(context, args);
             lastRan = Date.now();

@@ -19,6 +19,8 @@ export const ThemeProvider = ({children}: {children : React.ReactNode})=>{
         }
     }
 
+    //const value = useMemo(()=>{mode,setMode},[mode]);
+
     useEffect(()=>{
         handelThemeChnage();
     },[mode])
