@@ -34,14 +34,14 @@ const DateRangePicker = () => {
            <div>
             <h3 className=' text-center'>
                 Selected Dates from : <strong>{state[0].startDate.toDateString()}</strong> - to: <strong>{state[0].endDate.toDateString()}</strong> 
-                </h3>
+            </h3>
            </div>
            <div>
                 <div className=' flex w-full items-center justify-center'>
                     <button onClick={()=> setisShowDateRange(!isShowDateRange)} className=' flex items-center gap-x-1 rounded-lg border px-4 py-2 bg-[salmon] text-neutral-50 text-sm'>
                                 <CgCalendarDates className=' text-lg'/>
                                 <span className=' font-semibold'>Select Date</span>
-                        </button>
+                    </button>
                 </div>
                 {isShowDateRange && (
                     <div className=' absolute flex items-center justify-center lg:-right-24 max-sm:right-2 mt-1'>
