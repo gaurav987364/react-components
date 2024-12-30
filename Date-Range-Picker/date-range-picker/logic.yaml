@@ -1,0 +1,38 @@
+some talk about grid layout of calender;
+we simply make grid and we take number of col-7 for calender ok; 
+
+some talk about grid is we can use flex property also for grid layout like items-center, justify, gap etcs.
+
+and if we do parent a gird which have number of 7 columns which take eqauly space and we want any heading of something take space of column like 3 4 etc we do col-span-4 or any number of columns on child
+
+
+//clsx library; this is a utility function; which aloow us to pass strings and multiple classes into one line and alow us to write conditional statements;
+
+Usage:
+import clsx from 'clsx';
+// or
+import { clsx } from 'clsx';
+
+// Strings (variadic)
+clsx('foo', true && 'bar', 'baz');
+//=> 'foo bar baz'
+
+// Objects
+clsx({ foo:true, bar:false, baz:isTrue() });
+//=> 'foo baz'
+
+// Objects (variadic)
+clsx({ foo:true }, { bar:false }, null, { '--foobar':'hello' });
+//=> 'foo --foobar'
+
+// Arrays
+clsx(['foo', 0, false, 'bar']);
+//=> 'foo bar'
+
+// Arrays (variadic)
+clsx(['foo'], ['', 0, false, 'bar'], [['baz', [['hello'], 'there']]]);
+//=> 'foo bar baz hello there'
+
+// Kitchen sink (with nesting)
+clsx('foo', [1 && 'bar', { baz:false, bat:null }, ['hello', ['world']]], 'cya');
+//=> 'foo bar hello world cya'
