@@ -1,0 +1,32 @@
+hmne todos ko ek array me store kiyaa hai;
+
+filter
+todos.filter(todo => todo.name.toLowerCase().includes(query.toLowerCase()));
+
+highlighted index make function
+
+function highlightCharacter(text,query)=>{
+  const parst = text.split(new Regexp(` ${query}`,"gi"));
+
+  return (
+   <span>
+     {parts?>map((part)=> part.toLowercase() === query.toLowerCase() ? (
+       <span clasName=" bg-yellow-500">{parts}</span>
+     ) : (
+       parts
+     ))}
+   </span>
+  )
+} 
+
+
+const pageSize = 5;
+const [currIndex,setCurrIndex] = useState(1);
+
+const setindexfunc = (index)=>{setCurrIndex(index)};
+
+const paginatedTodosList = filterTodos.slice(
+  (currIndex -1)*pageSize, pageSize*currIndex
+)
+
+const totalPages = (filterTodos /pageSize)
