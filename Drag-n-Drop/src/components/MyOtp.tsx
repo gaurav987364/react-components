@@ -16,7 +16,6 @@ const MyOtp = ({count} : Props) => {
             const key = e.key;
             const allOtp = [...otps];
 
-
             if(key === "Backspace"){
                 allOtp[index] = "";
 
