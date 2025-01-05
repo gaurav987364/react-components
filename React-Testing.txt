@@ -1,0 +1,14 @@
+Prerequsitries: 
+1. React
+2. Typescript
+3. unit tests Basics (code with mosh js unit tests) course
+
+// course structure:
+1. testing components
+2. Mocking Api
+3. Testing forms
+4. Testing state management (context, redux)
+5. testing Authentication
+6. Testing Routing
+
+//
