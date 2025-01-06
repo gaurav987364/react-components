@@ -3,6 +3,34 @@ Prerequsitries:
 2. Typescript
 3. unit tests Basics (code with mosh js unit tests) course
 
+
+//types of tests;
+1. Unit Test (mostly time doing this)(testing individual components or functions);
+=> test component like stateless component and functions like which not change or affect the another functions;
+
+=> focus on individual components. They ensure that each unit of the code works correctly in isolation. For React.js, this typically means testing individual React components. For example, you might want to verify if a button component renders correctly or if a function behaves as expected.
+Tools:: Jest & React-testing-library
+
+2. Integration tests (testing how diff. components work together);  
+=> evaluate the interaction between different modules or components. Instead of testing components in isolation, integration tests ensure that they work together as intended. This might involve testing how various components interact within a particular section of the application.
+Example: Testing a form component to ensure it submits the data correctly and interacts well with its child components.
+Tools:: Jest & React-testing-library
+
+3. Automation tests (also known as E2E(end-to-end) test);
+=> testing the entire application like how the flows of application works properly as expected.
+
+def::=> simulate user interactions with the entire application. These tests ensure that the application behaves correctly from the user's perspective, covering full workflows and user scenarios.
+
+eg: sign-flows of app, buying subscriptions etc;
+Tools : Cypress,peppeteer library(multifeatures);
+//
+
+jest have both:
+//Snapshot testing
+//Enzyme tests
+
+
+
 // course structure:
 1. testing components
 2. Mocking Api
@@ -10,5 +38,54 @@ Prerequsitries:
 4. Testing state management (context, redux)
 5. testing Authentication
 6. Testing Routing
-
 //
+
+
+//setting up jest;⭐
+
+first of all remember one thing that we have to save all lirabry of testing as only dev-dependencies because in production there is no need of testing library and related things; so doing
+
+--sav-dev means dev-dependencies or --save after package means dependencie for main app production level
+
+npm i --save-dev jest
+
+now we have to setup the package.json file scripts for doing test
+
+"test":"jest --watch *.js" 
+
+// means jest package run kro , usme always changes dekhte rhao like continous running not doing again again npm test in cmd, *.js means sabhi js files ko watch kro 
+
+make folder name=>      __tests__
+ this is the convention because when we run that jest script it searching these folder of file name; 
+
+make file name=> card.test.js or card.test.jsx or card.test.tsx etc.
+
+
+first test in this file 
+
+it() or test() ; keyword in jest
+
+it("this is first test", ()=>{
+    what to test....
+    expect(ourFunction(2+2)).toEqual(4);
+    or or
+    expect(ourFunc("output",dbMock)).toBe(["","",""]);
+});
+
+dbMock means our sample database/Mocking to test funtion workflow;
+// expect kar rhe hai function se uske anadr kuch argument pass karke vo toBe ya toEqual hona chaiye toBe or toEqual ke anadar wale output se match;
+
+
+// how to test the function
+hme function me har ek condition ke liye test likhna hai alag alag in the our test file like user ne different arguments pass kre to kya hoga, function kisi ke liye kitne results de rha hai like we use slice etc things mtln har ek condition ko har ek tarike se test krna hai based on input and outpur if everything matchs that's perfect;
+
+
+//Making group of tests:
+describe("related name of tests", ()=>{
+    //move all tests related to same function so that it make group
+});
+
+
+// Asynchronous tests:
+
+Tip: we know fetch() is not working in the vs code terminal like when we run file with node index.js like this so we need package called node-fetch to run these thing in terminal (api call in terminal) 
