@@ -41,7 +41,9 @@ jest have both:
 //
 
 
-//setting up jest;⭐
+//setting up jest;⭐ 
+
+⭐⭐⭐ JEST CHEAT SHEET GITHUB SE LELO BEST HAI...⭐⭐⭐
 
 first of all remember one thing that we have to save all lirabry of testing as only dev-dependencies because in production there is no need of testing library and related things; so doing
 
@@ -89,3 +91,42 @@ describe("related name of tests", ()=>{
 // Asynchronous tests:
 
 Tip: we know fetch() is not working in the vs code terminal like when we run file with node index.js like this so we need package called node-fetch to run these thing in terminal (api call in terminal) 
+
+first make async api call function that brings data for us;
+
+const fetch = require("node-fetch);
+function getData = async (fetch) =>{
+    const resp = await fetch("https://json.placeholder.com/users");
+    const data = await resp.json();
+    return data;
+}
+module.exports = getData;
+
+
+
+// make datafile.test.js
+
+const getData = require("./datafile");
+const fetch = require("node-fetch");
+
+it("calls an api for data", ()=>{
+    getData(fetch).then(data =>{
+        // write here our test
+        expect(data.propertyName).toEqual("any property in that data")
+    })
+});
+
+
+//  Now we have assertions ;
+what is assertions => ham jo ye line likh rahe hai expect().toEqual() ye assertions kahelati hai to hm ek test me multiple assertions likh skate hai like ese;
+
+But ye error degi fail test ka kyuki ye getData ek promise hai jo pending return krdega before data so we use done method
+
+it("calls an api for data", (done)=>{
+    expect.assertions(1) // provide no.of assertions like for 1 so 1
+    getData(fetch).then(data =>{
+        // write here our test (assertions no-1)
+        expect(data.propertyName).toEqual("any property in that data");
+        done(); // means our api call se data agya
+    })
+}) 
