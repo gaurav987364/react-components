@@ -15,4 +15,4 @@ const Cell: React.FC<Props> = ({children,className,onClick}) => {
   )
 }
 
-export default Cell
+export default Cell;

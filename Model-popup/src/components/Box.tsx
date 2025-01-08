@@ -9,4 +9,4 @@ const Box = ({content} : Props) => {
   )
 }
 
-export default Box
+export default Box;

@@ -92,46 +92,6 @@ const MultiSearch = () => {
         }
     }
   return (
-    // <div className=" w-[40rem] h-[20rem] relative rounded-lg">
-    //     <div className=" input">
-    //         {/* pills */}
-    //         <span className=" w-full h-auto flex items-center gap-1  absolute top-[11px]">            
-    //         {selectedUser?.map((user)=>{
-    //             return (
-    //                  <Pills 
-    //                  key={user.email} 
-    //                  image={user.image} 
-    //                  text={user.firstName} 
-    //                  onClick={()=>handelRemoveUser(user)}
-    //              />
-    //             )
-    //         })}
-    //         </span>
-    //         {/* search suggestions */}
-
-    //         <input 
-    //          type="text"
-    //          value={searchValue}
-    //          onChange={(e)=> setSearchValue(e.target.value)}
-    //          placeholder="Search for users..."
-    //          className=" bg-gray-200 outline-none  focus:border-[2px] border-blue-700 w-full p-2 rounded-lg shadow-lg shadow-gray-400"
-    //          />
-    //          <div>
-    //             <ul className=" w-full max-h-[300px] overflow-y-scroll list-none p-0 m-0 absolute bg-white border border-l-black border-r-black border-b-black no-scrollbar mt-1">
-    //                 {suggestions?.map((user : Users)=> {
-    //                     return !alreadySelectedUser.has(user?.email) ? (
-    //                         <li onClick={()=> handelSelectedUser(user)} key={user?.email} className=" flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200 shadow-md shadow-slate-200 transition-transform">
-    //                             <img src={user?.image} alt="image" className=" w-10 h-10 rounded-full overflow-hidden" />
-    //                             <span className="font-semibold italic text-sm">{`${user?.firstName} ${user?.lastName}`}</span>
-    //                         </li>
-    //                     ) : <></>
-    //                 })}
-
-    //             </ul>
-    //          </div>
-    //     </div>
-    // </div>
-
     <div className="relative w-full max-w-lg rounded-lg">
         <div className="relative">
             {/* Pills */}

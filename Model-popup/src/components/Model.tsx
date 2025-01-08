@@ -47,4 +47,4 @@ const Model = ({title, content}: Props) => {
   )
 }
 
-export default Model
+export default Model;

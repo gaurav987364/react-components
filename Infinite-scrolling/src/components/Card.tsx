@@ -17,4 +17,4 @@ const Card = ({data}: Props) => {
   )
 }
 
-export default Card
+export default Card;
