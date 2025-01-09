@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Box from "./Box";
 
-interface Props{
+interface ModalProps{
     title : string;
     content: string;
 }
 
-const Model = ({title, content}: Props) => {
+const Model = ({title, content}: ModalProps) => {
     const [open, setOpen] = useState(false);
     const modelRef = useRef<HTMLDivElement>(null);
 

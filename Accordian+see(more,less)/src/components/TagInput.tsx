@@ -75,4 +75,4 @@ const TagInput = () => {
   )
 }
 
-export default TagInput
+export default TagInput;

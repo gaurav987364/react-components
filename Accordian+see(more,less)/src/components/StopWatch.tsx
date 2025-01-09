@@ -62,19 +62,19 @@ const StopWatch = () => {
                     onClick={stopFun}
                     className="px-4 py-2 bg-red-400 rounded-md text-xl font-semibold cursor-pointer"
                 >
-                    Stop
+                    Stop.
                 </button>
                 <button
                     onClick={startFun}
                     className="px-4 py-2 bg-blue-400 rounded-md text-xl font-semibold cursor-pointer"
                 >
-                    Start
+                    Start.
                 </button>
                 <button
                     onClick={resetFun}
                     className="px-4 py-2 bg-green-400 rounded-md text-xl font-semibold cursor-pointer"
                 >
-                    Reset
+                    Reset.
                 </button>
             </div>
 

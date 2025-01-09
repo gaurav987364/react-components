@@ -41,7 +41,7 @@ const Board = () => {
   );
 };
 
-export default Board
+export default Board;
 
 const Column = ({ title, headingColor, cards, column, setCards }) => {
   const [active, setActive] = useState(false);

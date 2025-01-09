@@ -30,4 +30,4 @@ const AgeCalculater = () => {
   )
 }
 
-export default AgeCalculater
+export default AgeCalculater;

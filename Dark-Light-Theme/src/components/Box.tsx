@@ -29,4 +29,4 @@ const Box = ({close}:Props) => {
   )
 }
 
-export default Box
+export default Box;

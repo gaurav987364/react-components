@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const pageSize = 4;
 const Pagination = () => {
@@ -10,7 +10,7 @@ const Pagination = () => {
         setUsers(data);
     };
     const [page, setPage] = useState(1);
-    const handlePageChange = (page) => {
+    const handlePageChange = (page:number) => {
         setPage(page);
     }
 

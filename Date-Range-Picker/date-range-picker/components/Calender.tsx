@@ -82,4 +82,4 @@ const Calender:React.FC<Props> = ({onChange,value}) => {
   )
 }
 
-export default Calender
+export default Calender;

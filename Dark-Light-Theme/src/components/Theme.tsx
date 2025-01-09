@@ -12,7 +12,7 @@ const Theme = () => {
     <div>
         <button onClick={onClick} className=" w-fit relative bg-purple-400 px-3 rounded-xl cursor-pointer">
             {mode === "light" ? (
-                <span>🌙✨</span>
+                <span>🌙</span>
             ) : (
                 <span>☀️</span>
             )}

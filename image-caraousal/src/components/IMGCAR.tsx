@@ -23,11 +23,10 @@ const IMGCAR : React.FC<Props> = ({children:slides}) => {
             <button onClick={handelPrev}><BiChevronLeft fill="black" size={40} className=" p-2 bg-gray-100/60 rounded-full"/></button>
             <button onClick={handelNext}><BiChevronRight fill="black" size={40} className=" p-2 bg-gray-100/60 rounded-full"/></button>
         </div>
-
         <div>
         </div>
     </div>
   )
 }
 
-export default IMGCAR
+export default IMGCAR;

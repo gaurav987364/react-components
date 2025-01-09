@@ -12,7 +12,7 @@ const Accordian = () => {
         <span onClick={toggleOpen} className="span">➕</span>
 
         {open && (
-            <div className=" content">
+            <div className="content">
                 <Content/>
             </div>
         )}
@@ -20,4 +20,4 @@ const Accordian = () => {
   )
 }
 
-export default Accordian
+export default Accordian;
