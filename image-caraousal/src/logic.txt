@@ -1,0 +1,46 @@
+basic features;
+
+1.horizontal scrolling(left/right);
+2.autoplay with customizable interval;
+3.pagination (dots/thumbnail);
+4.responsive design;
+
+Advanced features;
+1.infinite scroll
+2.lazy loading images
+3.keyboard navigation
+4.swipe support for touch devices
+5.customizable themse
+6.dynamic images loading
+7.ability to use mixed content (vidioes ,text etc.)
+8.Accessibility(ARIA roles and keyboard controls)
+
+Plan Component Structure;
+Split the functionality into smaller, reusable pieces:
+
+1.Carousel (Parent Component)
+2.CarouselTrack (Handles sliding of items)
+3.CarouselSlide (Individual slides)
+4.CarouselControls (Navigation buttons)
+5.CarouselIndicators (Pagination or thumbnails)
+
+
+//handelNext and Prev logic
+setCurrenIndex(prev => (prev+1)%images.length); for handelNext
+setCurrenIndex(prev => (prev-1+images.length)%images.length); for prev
+
+//autoplay logic
+ in useeffect we have to do 
+ if(autoplay && !ishovered){
+    const timer = setInterval(()=>{
+        setCurrenIndex(prev => (prev+1)%images.length);
+    },interval);
+
+    return ()=> clearInterval(timer);
+ },[give accordingly];
+
+// No janky scroll or train of images when reach on last image;
+
+Duplicate the First and Last Slides:
+
+Duplicate the first and last images in the array to create a seamless transition. For example, for [1, 2, 3, 4, 5], the array becomes [5, 1, 2, 3, 4, 5, 1].
