@@ -53,7 +53,7 @@
 import React, { useEffect, useRef } from "react";
 
 const IMGCar3: React.FC = () => {
-  console.log("render")
+  console.log("render");
   const sliderRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
