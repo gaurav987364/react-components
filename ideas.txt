@@ -39,3 +39,18 @@ target 2 in one day.
 
 ?? idea of one good project?
 hm ek kind of extension bana sakte hai jisko jab bnda use krega tab uske pass ek screen par logo of ai ka show krege and user jab chae us par click karek free chat kr skta hai just like personal assistant; features use for interview like not shown on any vidio call or hav screen hiding features etc... also have free tier chat like day ki 30 or 50 message and also support for sass like buy subscripttion so that user have more chat option or features or other things;
+
+
+
+// date 15-1-25
+pending work:[
+    ⭐react-authentication + call-bind-apply practice
+    1.drag-drop-practice + kanban board project
+    2.memory game agan making
+    3.react-query learning
+    4.multistep-form + practice again
+    5.image caraousel
+    6.ai bot with react-js simple baad me nextjs me
+    7.sorting,Pagination,filter again 
+    etc...
+]
