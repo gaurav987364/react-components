@@ -72,7 +72,7 @@ const IMGCar3: React.FC = () => {
           slider.appendChild(slider.firstElementChild!);
           slider.style.transition = "none"; // Disable transition temporarily
           slider.style.transform = "translateX(0)"; // Reset position
-        }, 500); // Wait for the transition to complete
+        }, 700); // Wait for the transition to complete
       } else if (direction === "prev") {
         // Move to the previous slide
         carouselRef.current!.style.justifyContent = "flex-end";
