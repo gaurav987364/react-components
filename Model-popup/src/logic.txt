@@ -1,0 +1,28 @@
+Full-Fledged Dialog-Box (React-Machine-Code);
+
+//Requirements:
+1.should open on button click✅
+2.should close by ESC (escape-key event)✅
+3.User should able to pass custom JSX or components✅
+4.It should show and hide with animation✅ (we are successfully add open animation close animation not wroking)
+5.it should be fully accessible
+6.Close button inside the dialog Box✅
+7.Close from outside click (ouside of dilaog Box);✅
+
+
+
+// ham outside click wali chij ko 2 tariko se  bana sakte hai jese ki hamne ek overlay class banayi hai taki hamare pass background clicks ka control ko to us par hm onClick={onClose} ko call kar skte hai simpley 
+
+or 2nd method is that we can make on function like 
+handleOutsideClick(e){
+    if(overlayRef.current && !overlayRef.current.contains(e.target as Node)){
+        onClose();
+    }
+};
+
+
+//⭐⭐⭐⭐ Accessiblity;
+
+1.it should be fully accessible, while dialog is open no-scroll, no-focus will be shifted anywhere; 
+
+==> we have to off the interaction of the other things but it is only possible when our dialog is created on the body level (in index.html our dialog is created in the body directly not evenn in the #root where our all app is.);; So we can solve this problem with createPortal from React-dom

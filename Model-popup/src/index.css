@@ -7,3 +7,20 @@ html,
 #root{
     width: 100%;
 }
+
+
+@keyframes fade_in_start {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade_in_content {
+    animation: fade_in_start 0.3s ease-in forwards;
+}
+.fade_in_overlay {
+    animation: fade_in_start 0.2s linear forwards;
+}
