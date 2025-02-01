@@ -26,3 +26,11 @@ handleOutsideClick(e){
 1.it should be fully accessible, while dialog is open no-scroll, no-focus will be shifted anywhere; 
 
 ==> we have to off the interaction of the other things but it is only possible when our dialog is created on the body level (in index.html our dialog is created in the body directly not evenn in the #root where our all app is.);; So we can solve this problem with createPortal from React-dom
+
+
+
+// we do not accessible the outside elements by makin two functions called blockOutsdieAccessibility or unblockOutsdieAccessibility by giving aria-hidden and inert true 
+
+// now we have to do focus capturing;
+
+hmne for testing ek button ko modal ko bja with some class name and hame check krna hai agar active elemnet par classlist contain me vo bja hua btn hai tab hme apna focus close button par shift krdena hai

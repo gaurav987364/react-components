@@ -16,7 +16,12 @@ const App = () => {
       <button type="button" className=" px-4 py-1 bg-blue-700 rounded-lg font-mono text-neutral-50 " onClick={toggleModal}>Open</button>
       {isOpen && (
         <div className=" w-full h-full flex items-center justify-center">
-          <Dialog onClose={closeModal}><h1>Hey!</h1></Dialog>
+          <Dialog onClose={closeModal}>
+            <div>
+              <h1>This is Modal.</h1>
+              <button className="btn px-4 py-0.5 bg-purple-500 rounded text-neutral-50">Ok</button>
+            </div>
+          </Dialog>
         </div>
       )}
     </div>
