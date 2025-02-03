@@ -1,0 +1,83 @@
+Pagination;
+
+//Requirements:-
+
+1.Two Types:[
+    a.) we have all data and we want to show limited data per page.
+    b.) we have large data, but we fetch only limited data, based on number of items per page.
+]
+
+2.user can change page by cliking next,previous, first and last button.
+
+3.user can change number of items shown per page.
+
+4.user can get page number options (1,2,3,4,5) and it should chnage number on click;
+
+5.currrent page number button should be highlighted; 
+
+//Tasks:-
+* we have only display 5 buttons or buttons based on prop for that per page 
+* dispay ... feature in button also;
+
+//) first we implment pagination for our local data
+
+//user se data liya using prop
+//now user se hi us data ke liye ui bhi lege kyuki ham nahi chate hm khud ka ui banaye vo flexibility provid nahi krta user ko so we use here most Common pattren RenderProp pattren.
+
+
+//logic for ellipses 
+First, when the current page is near the beginning, there should be an ellipsis on the right if there are more pages after the visible buttons. Similarly, when the current page is near the end, the ellipsis should be on the left. If the total pages are less than or equal to the max buttons (5), no ellipsis is needed.
+
+
+- Always show 5 buttons, but if the current window is not at the start, add an ellipsis before. If the window is not at the end, add an ellipsis after.
+
+when we are like [1,2,3,4,5] no need of ellipses but when we are like [...,2,3,4,5,6]
+
+<div className="total-pages">
+    {buttonStartIndex > 1 && <Ellipsis />}
+    {buttonsAtOneTime.map(...)}
+    {buttonEndIndex < totalPages && <Ellipsis />}
+</div>
+
+
+Key Changes:
+
+Ellipsis Conditions:
+
+Left Ellipsis: Displayed if buttonStartIndex > 1, indicating there are pages before the current range.
+
+Right Ellipsis: Displayed if buttonEndIndex < totalPages, indicating there are pages after the current range.
+
+Explanation:
+
+buttonStartIndex and buttonEndIndex determine the range of visible page numbers.
+
+Ellipsis elements (...) are rendered conditionally based on whether there are pages outside the current visible range.
+
+Styling: The ellipsis is styled as a non-clickable element using a <span> to indicate omitted pages.
+
+Example Scenarios:
+
+First Pages (e.g., Page 1 of 10):
+
+Visible Buttons: 1 2 3 4 5
+
+Right Ellipsis: ...
+
+Middle Pages (e.g., Page 5 of 10):
+
+Visible Buttons: 3 4 5 6 7
+
+Both Ellipsis: ... ...
+
+Last Pages (e.g., Page 10 of 10):
+
+Visible Buttons: 6 7 8 9 10
+
+Left Ellipsis: ...
+
+Additional Considerations:
+
+Ensure that the ellipsis does not interfere with the pagination controls and is styled appropriately for consistency.
+
+Test edge cases (e.g., very few pages, exactly maxButtons pages) to confirm correct behavior.
