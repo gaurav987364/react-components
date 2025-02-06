@@ -81,3 +81,22 @@ Additional Considerations:
 Ensure that the ellipsis does not interfere with the pagination controls and is styled appropriately for consistency.
 
 Test edge cases (e.g., very few pages, exactly maxButtons pages) to confirm correct behavior.
+
+
+
+//Improvements:
+make Types more maintainable and useable so that user can passes any type of data withour crashing our component;
+
+make useEffect for updating and calling onPageChange funcion
+
+conditionally calculates total pages or data based on isServerSide prop so that component is work properly with client as well as server side data;
+
+for type of data
+
+<T extends Record<String, any>>({props} : PaginationProps<T>);
+
+onType file;
+
+PaginationProps<T>{
+    data?:T[],
+}

@@ -99,7 +99,6 @@ const Pagination = ({
 
             {/* //dropdown to select items per page range */}
             <select onChange={(e)=>setPageSize(Number(e.target.value))}>
-                <option value={pageSize}>{pageSize}</option>
                 <option value={5}>5</option>
                 <option value={10}>10</option>
                 <option value={15}>15</option>
