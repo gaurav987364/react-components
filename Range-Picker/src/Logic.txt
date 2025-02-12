@@ -1,0 +1,27 @@
+Range slider.
+
+//Requirements:-
+
+1.Customizable Range => have settings for minimum and maximum values to define the range.
+
+2.Step increment => have support for step increment, allowing users to adjust the slider value in specific steps.
+
+3.Default and Controlled Values: The slider should support both uncontrolled (default values) and controlled (value prop) modes.
+
+4.Event Handlers: It should provide event handlers for various interactions, such as onInput, onThumbDragStart, onThumbDragEnd, onRangeDragStart, and onRangeDragEnd.
+
+5.Disabled State: The slider should have the ability to be disabled, preventing user interaction.
+
+6.Orientation: It should support both horizontal and vertical orientations.
+
+7.Customizable Appearance: The slider should allow for extensive customization of its appearance through CSS or inline styles.
+
+8.Labels and Tooltips: It should support displaying labels and tooltips to show the current value or range.
+
+9.Accessibility: The slider should be accessible, supporting keyboard navigation and screen readers.
+
+10.Responsive Design: It should be responsive, adapting to different screen sizes and devices.
+
+11.Range and Single Value Modes: The slider should support both range (two handles) and single value (one handle) modes.
+
+12.Flexible Range: It should allow for flexible range dragging, enabling users to compress or expand the range beyond the initial min and max values.
