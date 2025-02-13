@@ -44,7 +44,7 @@ const Pagination2 = <T extends Record<string, any>>({
 
 
   //max buttons to display;
-  const maxButtons = 3;
+  const maxButtons = 5;
   let buttonStartIndex = currentPage - Math.floor(maxButtons/2);
   let buttonEndIndex = currentPage + Math.floor(maxButtons/2);
 
