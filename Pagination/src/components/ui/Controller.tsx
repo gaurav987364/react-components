@@ -1,7 +1,7 @@
 import React from "react";
+import { HiDotsHorizontal } from "react-icons/hi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { ControllerProps } from "../../types";
-import { HiDotsHorizontal } from "react-icons/hi";
 
 const Controller :React.FC<ControllerProps> = ({
     handlePageChange,

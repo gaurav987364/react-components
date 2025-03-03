@@ -11,7 +11,7 @@ interface Pin {
     // originalIndex: number; 
     pinOrder: number | null; 
     isPinned: boolean;
-}
+};
 const Pin = () => {
     const [pins, setPins] = useState<Pin[]>([
         // {id: 1, text: "Pin 1", isPinned: false, originalIndex: 0},

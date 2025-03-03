@@ -7,11 +7,11 @@ import Practise from './components/Practise'
 const App = () => {
   return (
     <div className=' w-full h-screen text-neutral-50 p-5 bg-slate-950'>
-      {/* <Board/> */}
+      <Board/>
       {/* <DragBoard/> */}
       {/* <KanbanBoard/> */}
       {/* <Practise/> */}
-      <Pin/>
+      {/* <Pin/> */}
     </div>
   )
 }

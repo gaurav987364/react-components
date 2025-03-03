@@ -1,0 +1,61 @@
+Drag-n-Drop (Sortable List)
+
+1. Drag-n-Drop (Concept)
+   // There is no drag-n-drop feature enabled by default we have to enable it using certain methods. The reason for this is not enabled by default is security issues.
+
+2. To make something draggable we have to add the attribute 
+   // draggable=true
+
+3. Drag Events (when we start dragging any element)
+
+   => DragStart :- Fired once. wgen we start dragging any element. we    can change the drag item color etc. and notify user via css change.see the data about element being dragged. (datatransfer).Also we set the data.
+
+   => Drag :- Fired continuously. while we are dragging any element.Add any Ui element and track its position.
+
+   => DragStop :- Fired Once when we drop complete or get Cancelled.(item ko drag karke drop kiya or drag karke cancel krdiya). we can perform cleanup of the Ui. e.g. changes done to notify drag.
+
+   => DragEnter :- DragEnter event is Fired once when we are entered into the dropable area. Means jaha hame item drop krna hai udhr ye event once time fire hota hai. Hm us jagah par styling apply karte hai
+
+   => DragOver :- continuously Fired on the dragged item.It is cruicial to detect the area is valid for item dropped or not if yes then we apply some css or styling over there.also by using this we get the info about place and item.
+
+   => DragLeave :- Fired once when dropped element leaves  on a valid drop target.
+
+   => Drop
+
+**Diffenciate b/w these events :-
+ 
+=>Events when we are dragging source elemnt 
+  • dragStart
+  • dragEnd
+  • drag
+
+=>Events when we drop elemnt (Drop zone events).
+  • onDragEnter/dragEnter
+  • onDragOver/dragOver
+  • onDragLeave/dragLeave
+  • onDrop/drop
+
+**Note :- without dragOver the drop event is not working**
+
+***Rule Main :- If we applying all the events currectly , the drag-n-dop is not working because of browser prevent these things due to security reasons.. so that we have to explicitely tell browser that dont add extra things i want my own features. so that we add e.preventDefault() on to dragOver and drop events.***
+
+
+//steps to make Sortable List.
+
+1.Make list items draggable. add attribute.
+2.change the cursor grab(hand) when active add grabbing(mutthi).
+3.Set & reset the start index when dragging start.
+4.Visual representation from where you have dragged a row.
+  jisko pakdahai uski jgaha styling.
+5.Visual representation. what are you dragging.
+  jisko pakdahai uski khudki styling.
+  hm e.effectAllowed = "link or many options"; kar skte hai for diff.cursors.
+6.Visual representation.when you drop,where will the dropped element is added.
+7.Swap the rows.
+8.Detect the directions Top or bottom.
+9.Visual representation. 
+
+
+//tips
+ e.target gives us the whole thing
+ e.currentTarget gives the currectly element on which event is running

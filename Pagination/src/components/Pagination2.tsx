@@ -56,7 +56,7 @@ const Pagination2 = <T extends Record<string, any>>({
   if(buttonEndIndex > totalNumberOfPages){
     buttonEndIndex = totalNumberOfPages;
     buttonStartIndex = Math.max(1, totalNumberOfPages - maxButtons + 1);
-  }
+  };
 
   const buttonToDisplay = totalPagesButtons?.slice(
     buttonStartIndex-1,
@@ -73,6 +73,7 @@ const Pagination2 = <T extends Record<string, any>>({
   useEffect(() => {
     onPageChange?.(currentPage, pageSize);
   }, [currentPage, pageSize]);
+  
   return (
     <div className={`pagination-container ${className} overflow-hidden overflow-y-scroll no-scrollbar`}>
       {loading ? loader || (
