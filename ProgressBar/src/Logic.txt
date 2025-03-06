@@ -1,0 +1,53 @@
+Q:Make progress bar library in react.js;
+
+1-Core Requirements:
+
+◉ Multiple variants (linear, circular, indeterminate)
+◉ Customizable colors/theming
+◉ Size variations
+◉ Accessible (ARIA compatible)
+◉ Animation control
+◉ Custom label formatting
+◉ Value tracking/validatio
+◉ Responsive design
+◉ Type safety
+◉ Theme integration
+
+
+Common Use Cases:
+
+◉ File upload progress
+◉ Form completion status
+◉ Loading indicators
+◉ Goal tracking
+◉ Skill level visualization
+◉ Process workflows
+◉ Health/performance metrics
+◉ Game progress indicators
+
+
+2. Tech Stack Decisions-
+
+React: Component-based architecture
+TypeScript: Type safety and better DX
+Tailwind: Utility-first styling with customization
+clsx: For class name combination
+Storybook: Component documentation/demo
+Jest: Testing framework
+Framer Motion (optional): Advanced animations;
+
+ProgressBarLibrary/
+├── src/
+│   ├── components/
+│   │   ├── LinearProgress.tsx
+│   │   ├── CircularProgress.tsx
+│   │   └── ProgressContainer.tsx
+│   ├── hooks/
+│   │   └── useProgress.ts
+│   ├── types/
+│   │   └── types.ts
+│   └── utils/
+│       └── helpers.ts
+├── stories/
+├── tests/
+└── utils/

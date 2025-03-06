@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Custom progress bar animations */
+@keyframes progress-indeterminate {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+}
+  
+.progress-indeterminate {
+    animation: progress-indeterminate 2s infinite linear;
+}
+  
+  /* Optional custom sizes if needed */
+.progress-sm {
+    height: 0.25rem;
+}
+  
+.progress-md {
+  height: 0.5rem;
+}
+
+.progress-lg {
+  height: 0.75rem;
+}
+
+.progress-xl {
+  height: 1rem;
+}
+
+
+/* Add these if not already present for circluar*/
+.stroke-current {
+  stroke: currentColor;
+}
+
+.text-gray-200 {
+  color: #e5e7eb;
+}
+
+/* Smooth transition for circular progress */
+.transition-all {
+  transition-property: all;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
