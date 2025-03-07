@@ -1,0 +1,62 @@
+Problem statement:-
+
+Q: You are provided with one 2D array of elements with 0,1;
+
+1 means they are clickable
+0 means they are not clickable
+
+?? so we have to solve that if user clicks on that elements means lights are turned on after some sort of interval lights are turned-off in same order(reversed) in which they clicked.
+
+
+Take data structure like that
+
+const Grid = [
+    [1,1,0],
+    [0,1,1],
+    [1,0,1],
+];
+
+now render the grid lights based on that data structure; also write some css.
+
+//Logic
+
+1. we have to make one function in that we take rowIndex and columnIndex
+2. we have to use new Map() in use state to track order and state changes. => [stack,setStack] = useState(new Map());
+3. const newStack = new Map(stack);
+4. const keys = `${rowIndex}-${columnIndex}`; //"0-0"
+5. we have to add validation check that we only select light with value 1 not with 0
+
+if(newStack.get(key) || !Grid[rowIndex][columnIndex]){
+    return;
+} else {
+    newStack.set(keys,true);
+}
+setStack(newStack);
+
+6. now we have to added css for light-on for on select and light-off for 0;
+
+7. we have to find totalSelectedLights so that after select all we perform reversed Logic
+
+const totalSelectedLights = Grid.flat().reduce((a,b)=> a+b,0);
+// meaning of this line we simpley flat the 2d array so that it is turned into more reradable array after that we reduce to get totalSelectedLights numbers after select all lights (6)
+
+8. if(totalSelectedLights === newStack.size){
+    doTurnOffLight();
+}
+
+9. create doTurnOffLight() function 
+
+{
+    const intervalId = setInterval(()=>{
+        setStack((prev)=>{
+            const lastItem = Array.from(Object.keys(prev)).pop();
+            const newStack = new Map(stack);
+            newStack.delete(lastItem);
+
+            if(newStack.size === 0) {
+                clearInterval(intervalId);
+            }
+            return newStack;
+        })
+    },1000);
+}
