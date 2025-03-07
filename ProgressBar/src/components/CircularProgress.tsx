@@ -7,7 +7,7 @@ const CircularProgress: React.FC<ProgressBarProps & { strokeWidth?: number }> = 
   max = 100,
   size = 'md',
   color = 'text-blue-500',
-  strokeWidth = 8,
+  strokeWidth = 5,
   className = '',
   label,
   showValue = false,
@@ -16,8 +16,8 @@ const CircularProgress: React.FC<ProgressBarProps & { strokeWidth?: number }> = 
 }) => {
   const percentage = getPercentage(value, min, max);
   const clampedValue = clampValue(value, min, max);
-  const radius = 50 - strokeWidth / 2;
-  const circumference = 2 * Math.PI * radius;
+  const radius = 50 - strokeWidth / 2; //r = diamter/2
+  const circumference = 2 * Math.PI * radius; // 2 * pi * r
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   const sizeClasses = {
@@ -37,6 +37,7 @@ const CircularProgress: React.FC<ProgressBarProps & { strokeWidth?: number }> = 
       aria-label={ariaLabel}
     >
       <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+        {/* // this gray body */}
         <circle
           cx="50"
           cy="50"
@@ -45,6 +46,7 @@ const CircularProgress: React.FC<ProgressBarProps & { strokeWidth?: number }> = 
           strokeWidth={strokeWidth}
           fill="transparent"
         />
+        {/* //this is fill of bar */}
         <circle
           cx="50"
           cy="50"
@@ -52,9 +54,9 @@ const CircularProgress: React.FC<ProgressBarProps & { strokeWidth?: number }> = 
           className={`stroke-current ${color} ${transition}`}
           strokeWidth={strokeWidth}
           fill="transparent"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={strokeDashoffset}
+          strokeLinecap="round"  // baar ka border radius
+          strokeDasharray={circumference} //sets fill line
+          strokeDashoffset={strokeDashoffset} //draw fill line
         />
       </svg>
       {showValue && (

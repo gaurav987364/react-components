@@ -1,32 +1,15 @@
-import React, { useEffect, useState } from "react"
+import React from "react";
 import LinearProgress from "./components/LinearProgress"
 import CircularProgress from "./components/CircularProgress"
 // import IndeterminateProgress from "./components/IndeterminateProgress"
 import ProgressBar from "./components/ProgressBar"
+import { useProgressInc } from "./hooks/useProgressInc";
+// import { useProgressDec } from "./hooks/useProgressDec";
+// import FileUploadStatus from "./components/FileUploadStatus"
 
 const App = () => {
-  const [progress, setProgress] = useState(0);
-
-  const getDynamicProgress = (duration : number,steps:number) => {
-    let progress = 0;
-    const interval = duration / 100;
-    const intervalId = setInterval(() => {
-        console.log(`Progress: ${progress}%`);
-        progress += steps;
-        setProgress(progress);
-        if (progress > 99) {
-            clearInterval(intervalId);
-        }
-    }, interval);
-    return intervalId;
-  };
-  useEffect(()=>{
-    const intervalId = getDynamicProgress(9000,4);
-    return ()=> clearInterval(intervalId);
-  },[]);
-
-
-
+  const progress = useProgressInc(4000,2);
+  // const progress = useProgressDec(4000,true);
   return (
     <React.Fragment>
       <div className=" p-5 w-full h-screen">
@@ -49,22 +32,27 @@ const App = () => {
           className="rounded-full"
         />
 
-      <CircularProgress value={progress} />
-      <CircularProgress 
-        value={progress}
-        size="lg"
-        color="text-green-500"
-        strokeWidth={6}
-        showValue
-      />
-      <CircularProgress
-        value={progress}
-        size="sm"
-        color="text-purple-500"
-        className="border-4 border-gray-100 rounded-full"
-        showValue
-        label={<span className="text-sm font-bold text-purple-500">900%</span>}
-      />
+        <CircularProgress 
+        value={50}
+        showValue 
+        strokeWidth={3}
+        label={(value)=> `${value}%`}
+        />
+        <CircularProgress 
+          value={progress}
+          size="lg"
+          color="text-green-500"
+          strokeWidth={6}
+          showValue
+        />
+        <CircularProgress
+          value={progress}
+          size="sm"
+          color="text-purple-500"
+          className="border-4 border-gray-100 rounded-full"
+          showValue
+          label={<span className="text-sm font-bold text-purple-500">900%</span>}
+        />
 
       {/* <IndeterminateProgress
         // variant="indeterminate"
@@ -72,6 +60,8 @@ const App = () => {
       >
         <div className="w-1/2 h-full bg-blue-500 progress-indeterminate rounded-full" />
       </IndeterminateProgress> */}
+
+      {/* <FileUploadStatus/> */}
       </div>
     </React.Fragment>
   )

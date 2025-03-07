@@ -37,6 +37,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={indeterminate ? undefined : progress}
+        aria-label={label}
       >
         <div
           className={`absolute top-0 left-0 h-full transition-all duration-500 ease-in-out ${

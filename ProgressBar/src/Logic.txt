@@ -51,3 +51,120 @@ ProgressBarLibrary/
 ├── stories/
 ├── tests/
 └── utils/
+
+
+//Making our own Progress bar components;
+
+steps to follow :-
+
+1. we have to create one Progress.tsx component it is container for all types.
+
+2. we have to create utils folder in which two files called 
+[helper.ts and types.d.ts];
+
+3.Now we have to create a LinearProgress, CircularProgress and Indeterminate progress components.
+
+we have two type of Progress determinate vs Indeterminate progress:-
+
+=> differnce b/w above three are linear progress means a simple bar with animation , custom theme and styling and lable.and circular progress means kind of loading type progress component with same above features.
+
+and Indeterminate progress means a continous loading kind of progress used for loading , upoading etc things. It works on continous loop;
+
+
+4. we have to define types for size and variants;
+5. we have to define interface for type safety.
+
+type Size = "sm" | "lg" | "md";
+type variant = "linear" | "circular" | "indeterminate";
+{
+    progress : number = 0;
+    min
+    max
+    showValue
+    label : React.ReactNode || ((label : number)=> React.ReactNode)
+    labelClass
+    backgroundColor
+    color
+    indeterminate
+    ariaLable
+    variant
+    size
+}
+
+
+6. we have to make two function in helper.ts
+
+clampValue = (value, min,max)=>{
+    return Math.min(Math.max(value,min),max)
+}
+
+getPercentage = (value, min, max)=>{
+    if(max <= min) return 100;
+    return ((value - min) / (max - min)) *100;
+}
+
+7. accessiblity ke liye hame hmarae component  ke main div par jo top div hai uspar dena hai 
+
+role="progressbar"
+aria-label={label}
+ariavaluefornow={progress}
+aria-valuemax="100"
+aria-valuemin="0"
+
+//note::--
+ham hamare component me label ko render krne ke liye label ke interface me 2 chije le rahe hai one is ki hm user ka text render krde or second is function taki hm total value ko render kar sake means kitna percent progress hua hai
+
+{typeOf label === "function" ? label(clampedValue) : label ?? `${percentage}`}
+
+
+// making of circular progress
+
+<svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+        {/* // this gray body */}
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          className="stroke-current text-gray-200"
+          strokeWidth={strokeWidth}
+          fill="transparent"
+        />
+        {/* //this is fill of bar */}
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          className={`stroke-current ${color} ${transition}`}
+          strokeWidth={strokeWidth}
+          fill="transparent"
+          strokeLinecap="round"  // baar ka border radius
+          strokeDasharray={circumference} //sets fill line
+          strokeDashoffset={strokeDashoffset} //draw fill line
+/>
+</svg>
+
+hame sabse phle to svg tag ke andar circle tag ka use krna hoga then hme kuch kuch important property ka use karke circle draw krna hoga...
+
+as like linear progress hma phle gray wala part banana hai then usme bar ya fill color ko bananan hai.
+
+
+we need to calculate these things
+
+percentage
+clampedValue
+radius = 50 - strokeWidth / 2;
+circumference = 2*pi*r => 2* Math.PI * radius;
+strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+note svg tag ko viewbox dena important hai by default hmara circle reactangle ke left top me ayaga to viewbox="0 0 100 100" se vo pura reactangle ko cover kr lega or center me ayaga.
+
+note hme circle ko classname me stoke class jarur deni hai varna hme screnn pe kuch show nhi hoga 
+
+strokeWidth : withd of line
+cx : center to x-axis
+cy : center to y-axis
+radius : radius
+fill : make always transparent else black circle are drwan
+strokeLinecap="round"  : baar ka border radius
+strokeDasharray={circumference} : bar ko draw or sets fill line
+strokeDashoffset={strokeDashoffset} : bar ko fill or draw fill line
