@@ -4,6 +4,7 @@ interface Props{
     title:string;
     id:string;
     column:string;
+    // handelDragStart:()=>void; // this function will be passed down to parent component to handle drag start event  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }
 const Cards = ({title,id,column,handelDragStart}:Props) => {
   return (

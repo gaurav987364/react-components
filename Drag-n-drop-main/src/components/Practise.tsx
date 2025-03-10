@@ -15,7 +15,7 @@ const Practise = () => {
     const handelDragStart = (item:number)=>{
         setDraggedItem(item)
     };
-    const handelDragOver = (e:DragEvent,index:number)=>{
+    const handelDragOver = (e: React.DragEvent<HTMLDivElement>, index: number) => {
         e.preventDefault();
         setHighlightIndex(index);
     };
@@ -26,8 +26,10 @@ const Practise = () => {
 
     const handelDrop = (index:number)=>{
         const copy = [...tasks];
-        const [draggedCard] = copy.splice(draggedItem,1);
-        copy.splice(index,0,draggedCard);
+        if (draggedItem !== null) {
+            const [draggedCard] = copy.splice(draggedItem, 1);
+            copy.splice(index, 0, draggedCard);
+        }
         setTask(copy);
         setDraggedItem(null);
         setHighlightIndex(null);
