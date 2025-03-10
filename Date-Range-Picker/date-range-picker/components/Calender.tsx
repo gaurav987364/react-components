@@ -7,8 +7,17 @@ const Days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 interface Props {
   value?:Date;
   onChange: (value: Date) => void;
+  startDate?: Date;
+  endDate?: Date;
+  onRangeChange?: (start: Date | null, end: Date | null) => void;
 }
-const Calender:React.FC<Props> = ({onChange,value}) => {
+const Calender:React.FC<Props> = ({
+  onChange,
+  value,
+  endDate,
+  onRangeChange,
+  startDate
+}) => {
   //?code from library util function
    //const start = startOfMonth(value!);
   // const end = endOfMonth(value!);
@@ -16,6 +25,8 @@ const Calender:React.FC<Props> = ({onChange,value}) => {
   //const prevMonth = onChange && onChange(sub(value,{month:1})); month-1
   // const nextMonth = onChange && onChange(add(value,{month:1})); month+1
   //{format(value,"LLLL yyyy")} Month 2024
+
+  //date range 
 
 
   const start = StartOfMonth(value!);
@@ -47,8 +58,22 @@ const Calender:React.FC<Props> = ({onChange,value}) => {
   const setDate = (index:number)=>{
     //? we create new date object and set it to selected date
     const selected = new Date(value!.getFullYear(),value!.getMonth(),index);
-    onChange(selected);
-  }
+    if (onRangeChange) {
+      if (!startDate || (startDate && endDate)) {
+        // If no startDate, or both start & end are selected, reset range
+        onRangeChange(selected, null);
+      } else if (startDate && !endDate && selected >= startDate) {
+        // If startDate is set, and selected date is after startDate, set endDate
+        onRangeChange(startDate, selected);
+      } else {
+        // If selected date is before startDate, set it as new startDate
+        onRangeChange(selected, null);
+      }
+    } else {
+      onChange(selected);
+    }
+  };
+
   
   return (
     <div className=' w-[300px] border p-0.5 mt-5 shadow-md shadow-gray-400/30 rounded'>
@@ -56,7 +81,7 @@ const Calender:React.FC<Props> = ({onChange,value}) => {
         {/* making header */}
         <Cell onClick={handelPrevYear}>{"<<"}</Cell>
         <Cell onClick={handelPrev}>{"<"}</Cell>
-        <Cell className=' col-span-3 text-[salmon]'>{monthFormat}</Cell> 
+         <Cell className=' col-span-3 text-[salmon]'>{monthFormat}</Cell> 
         <Cell onClick={handelNext}>{">"}</Cell>
         <Cell onClick={handelNextYear}>{">>"}</Cell>
 
@@ -70,9 +95,32 @@ const Calender:React.FC<Props> = ({onChange,value}) => {
         {Array.from({length:numOfDaysInMonth}).map((_,i)=>{
           const days = i+1;
           const isActive = value!.getDate() === days;
-          return <Cell className={`${isActive ? " bg-[salmon] hover:bg-[salmon] hover:text-white" : " font-mono"}`}  key={i} onClick={()=>setDate(days)}>
-            {days}
-          </Cell>
+          const current = new Date(value!.getFullYear(), value!.getMonth(), days);
+          const isStart = startDate && current.getTime() === startDate.getTime();
+          const isEnd = endDate && current.getTime() === endDate.getTime();
+          const isInRange =
+            startDate &&
+            endDate &&
+            current > startDate &&
+            current < endDate;
+          return (
+            <Cell 
+              className={`
+                ${isActive ? 
+                " bg-[salmon] hover:bg-[salmon] hover:text-white" : " font-mono"}   
+                ${isStart ? 
+                "border-t border-b border-l rounded-tl-xl rounded-bl-xl text-white bg-[salmon]/30" : ""}
+                ${isEnd ? 
+                "border-t border-b border-r rounded-tr-xl rounded-br-xl text-white bg-[salmon]/30" : ""}
+                ${isInRange ? 
+                "border-t border-b bg-[salmon]/30" : ""}`
+              }  
+              key={i} 
+              onClick={()=>setDate(days)}
+            >
+              {days}
+            </Cell>
+          )
         })}
 
         {/* matching day with real calender suffix */}
