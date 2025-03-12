@@ -16,4 +16,4 @@ export interface CellProps extends PropsWithChildren {
     onClick?:() => void;
     className?: string;
     style?:Record;
-}
+};
