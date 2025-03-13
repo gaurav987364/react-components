@@ -10,6 +10,10 @@ export interface DatePickerProps {
     className?:string;
     themeColor?:string;
     rangeColor?:string;
+    minDate?:Date;
+    maxDate?:Date;
+    locale?:string;
+    weekStartsOn?:number;
 };
 
 export interface CellProps extends PropsWithChildren {

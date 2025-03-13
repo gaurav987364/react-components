@@ -29,6 +29,7 @@ export const format = (date:Date)=>{
      if (!(date instanceof Date)) { 
         throw new TypeError('The argument must be a Date object'); 
      } 
+
      
       const monthNames = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]; 
       // Get the month (0-11)
@@ -81,3 +82,62 @@ export const NextYear = (date:Date)=>{
     const nextYear = new Date(date.getFullYear() + 1, date.getMonth(), date.getDate());
     return nextYear;
 };
+
+
+//new
+// utils/date-utils.ts
+
+// Date comparison functions
+export const isSameMonth = (date1: Date, date2: Date): boolean => {
+return date1.getFullYear() === date2.getFullYear() && 
+        date1.getMonth() === date2.getMonth();
+};
+
+export const isSameYear = (date1: Date, date2: Date): boolean => {
+return date1.getFullYear() === date2.getFullYear();
+};
+
+export const isSameDay = (date1: Date, date2: Date): boolean => {
+return isSameYear(date1, date2) &&
+        isSameMonth(date1, date2) &&
+        date1.getDate() === date2.getDate();
+};
+  
+  // Formatting function
+export const format2 = (date: Date, locale: string = 'en-US') => {
+return {
+    monthName: date.toLocaleDateString(locale, { month: 'long' }),
+    year: date.getFullYear(),
+    shortYear: date.toLocaleDateString(locale, { year: '2-digit' }),
+    weekday: date.toLocaleDateString(locale, { weekday: 'short' })
+};
+};
+  
+//   // Other utility functions you'll need
+//   export const StartOfMonth = (date: Date): Date => {
+//     return new Date(date.getFullYear(), date.getMonth(), 1);
+//   };
+  
+//   export const EndOfMonth = (date: Date): Date => {
+//     return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+//   };
+  
+//   export const NextMonth = (date: Date): Date => {
+//     return new Date(date.getFullYear(), date.getMonth() + 1, 1);
+//   };
+  
+//   export const PrevMonth = (date: Date): Date => {
+//     return new Date(date.getFullYear(), date.getMonth() - 1, 1);
+//   };
+  
+//   export const NextYear = (date: Date): Date => {
+//     return new Date(date.getFullYear() + 1, date.getMonth(), 1);
+//   };
+  
+//   export const PrevYear = (date: Date): Date => {
+//     return new Date(date.getFullYear() - 1, date.getMonth(), 1);
+//   };
+  
+//   export const getDaysInMonth = (year: number, month: number): number => {
+//     return new Date(year, month + 1, 0).getDate();
+//   };

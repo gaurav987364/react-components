@@ -7,24 +7,28 @@ const App = () => {
   const [startDate,setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const {fullFormat} = format(currentDate);
-  const handleDateChange = (date: Date) => {
-    setCurrentDate(date);
-  }
-  const handleRangeSelection = (start:Date | null,end:Date | null)=>{
-    setStartDate(start);
-    setEndDate(end);
-  };
   return (
     <div className=" w-full h-screen bg-zinc-200 flex flex-col items-center justify-center">
       <DatePicker
-       todaysDate={currentDate}
-       dualCalendar
-       onChange={handleDateChange}
-       startDate={startDate!}
-       endDate={endDate!}
-       onRangeSelected={handleRangeSelection}
-       rangeColor="linear-gradient(to right, #4d4a54, #a08494)"
-       themeColor="purple" 
+        todaysDate={currentDate}
+        dualCalendar
+        startDate={startDate!}
+        endDate={endDate!}
+        onRangeSelected={(start, end) => {
+          setStartDate(start);
+          setEndDate(end);
+        }}
+        minDate={new Date(2024, 0, 1)}
+        maxDate={new Date(2025, 11, 31)}
+        themeColor="red"
+        rangeColor="red"
+        locale="en-US"
+        weekStartsOn={1}
+        onChange={(date:Date)=>{
+          setCurrentDate(date);
+          setStartDate(null);
+          setEndDate(null);
+        }}
       />
       <div>
         {fullFormat}
