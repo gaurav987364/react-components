@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { MdFlipCameraAndroid } from 'react-icons/md';
 import { data } from '../App';
 
