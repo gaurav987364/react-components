@@ -1,13 +1,12 @@
-import FileUpload, { filetype } from "./components/FileUpload"
+import FileUp from "./components/FileUp"
+
 
 const App = () => {
-  const getFiles = (files : filetype[])=>{
-    console.log(files);
-    // You can process the files here.
-  }
   return (
     <div className=" w-full h-screen bg-gray-300 mx-auto flex justify-center py-2">
-      <FileUpload getFiles={(files)=> getFiles(files)}/>
+      <FileUp
+       showError={true}
+      />
     </div>
   )
 }
