@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { MdOutlineCloudUpload } from "react-icons/md";
 import { FaRegFileCode, FaTrashCan } from "react-icons/fa6";
-import { formatFileSize } from '../utils/helper';
+import { acceptedFileTypes, formatFileSize } from '../utils/helper';
+import  usePromiseTracker  from '../hooks/usePromiseTracker';
 
 interface FileTypeProps{
     multiple?: boolean;
@@ -11,11 +12,16 @@ interface FileTypeProps{
     showError?: boolean;
     errorMessage?: string;
     showProgress?: boolean;
-    uploadErrorMessage?: string;
     disabled?: boolean;
     label?: string;
     className?: string;
 };
+
+// interface FileUploadEventProps extends React.ChangeEvent<HTMLInputElement>{
+//     target: HTMLInputElement & EventTarget;
+// };
+
+const UPLOAD_SPEED_KBPS = 500; // Simulated upload speed in KB/s
 
 interface DragEventHandlers {
     onDragEnter: (event: React.DragEvent<HTMLDivElement>) => void;
@@ -30,21 +36,27 @@ const FileUp:React.FC<FileTypeProps> = ({
     required,
     showError = false,
     errorMessage,
-    progress,
-    uploadProgress,
-    uploadError,
-    uploadErrorMessage,
+    showProgress = false,
     disabled,
     label,
     className,
  ...rest
 }) => {
     const [allFiles,setAllFiles] = useState<File[]>([]);
+    const [promises,setPromises] = useState<Promise<string>[]>([]);
     const [isDragging,setIsDragging] = useState<boolean>(false);
     const [errors,setErrors] = useState<boolean>(false);
     console.log(errors);
     const dropZoneRef = useRef<HTMLDivElement | null>(null);
 
+    //use of promise tracker;
+    const  {progress} = usePromiseTracker(promises);
+    console.log(progress);
+
+    //file types
+    const allfiletypes = Object.values(acceptedFileTypes).flat().join(",");
+
+    //file upload function 
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         //making an array of file {item 1}.
         const filesArray = Array.from(e.target.files!);
@@ -63,9 +75,36 @@ const FileUp:React.FC<FileTypeProps> = ({
 
         //set files
         setAllFiles([...allFiles, ...newFiles]);
+
+
+        //setting promise for each file upload
+        const uploadPromise:Promise<string>[] = allFiles.map((file:File)=>{
+            return new Promise((resolve) => {
+                // Simulate file upload with a timeout
+                const fileSizeKb = file.size / 1024;
+                const uploadTime = (fileSizeKb / UPLOAD_SPEED_KBPS) * 1000; // Convert KB/s to ms
+                setTimeout(() => {
+                    resolve(`Uploaded ${file.name}`);
+                }, uploadTime);
+            });
+        })
+
+        //call upload function
+        setPromises(uploadPromise);
         //send back to user.
         if(onFileUpload){
             onFileUpload(newFiles);
+        }
+    }
+
+    //delete files
+    const deleteFile = (file:File)=>{
+        const updatedFiles = allFiles?.filter((f) =>{
+            return f.name!== file.name || f.size!== file.size;
+        });
+        setAllFiles(updatedFiles);
+        if(onFileUpload){
+            onFileUpload(updatedFiles);
         }
     }
 
@@ -95,7 +134,7 @@ const FileUp:React.FC<FileTypeProps> = ({
         setIsDragging(false); // Remove highlight
         
         const files = event.dataTransfer!.files; // Get dropped files
-        setAllFiles([...allFiles,...Array.from(files)]);
+        setAllFiles([...allFiles,...files]);
     };
   return (
         <div className="w-full max-w-[600px] h-[350px] max-sm:h-[80%] shadow-lg shadow-[#00000057] rounded-3xl bg-[#feffe9d6] p-4">
@@ -132,7 +171,7 @@ const FileUp:React.FC<FileTypeProps> = ({
                 required={required}
                 multiple={multiple}
                 name={name}
-                accept=".psd,.jpg,.jpeg,.pdf,.png"
+                accept={allfiletypes}
                 aria-label={label}
                 {...rest}
                 className="hidden"
@@ -147,18 +186,30 @@ const FileUp:React.FC<FileTypeProps> = ({
                 Uploaded Files
             </h1>
             {allFiles?.map(file => (
-                <div key={file.size} className="flex items-center justify-between h-[20%] bg-gray-200 p-3 rounded-xl">
-                <div className="flex items-center gap-1">
-                    <FaRegFileCode size={22} />
-                    <span className=' w-[80px] line-clamp-1 text-sm font-semibold'>
-                    {file.name}
-                </span> /
-                <span className=' font-thin text-xs mt-0.5 text-gray-500'>{formatFileSize(file.size)}</span>
+                <div key={file.name} className="relative w-full">
+                <div className="flex items-center justify-between bg-gray-100 p-3 shadow-md">
+                  <div className="flex items-center gap-2">
+                    <FaRegFileCode size={22} className="text-blue-500" />
+                    <span className="w-[100px] truncate text-sm font-semibold">
+                      {file.name}
+                    </span>
+                    <span className="text-xs text-gray-500">
+                      ({formatFileSize(file.size)})
+                    </span>
+                  </div>
+                  <button onClick={() => deleteFile(file)} className="hover:opacity-80">
+                    <FaTrashCan size={18} className="text-red-500" />
+                  </button>
                 </div>
-                    <button>
-                        <FaTrashCan size={18} fill="red" />
-                    </button>
+          
+                {/* Progress Bar */}
+                <div className="absolute left-0 bottom-0 w-full h-[3px] bg-gray-300 rounded-lg overflow-hidden">
+                  <div
+                    className="h-full bg-blue-500 transition-all duration-300"
+                    style={{ width: `40%` }}
+                  ></div>
                 </div>
+              </div>
             ))}
         </div>
         </div>
