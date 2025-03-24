@@ -1,3 +1,5 @@
+
+
 export const formatFileSize = (sizeInBytes:number) => {
     if (sizeInBytes < 1024) {
       return `${sizeInBytes} B`;
@@ -27,3 +29,4 @@ export const acceptedFileTypes = {
   code: [".html", ".css", ".js", ".jsx", ".tsx", ".ts", ".json", ".xml", ".py", ".java", ".cpp"],
   misc: [".psd", ".ai", ".sketch"]
 };
+
