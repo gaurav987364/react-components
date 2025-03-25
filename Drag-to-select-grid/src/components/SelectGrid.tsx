@@ -37,7 +37,10 @@ const SelectGrid:React.FC<Props> = ({
 //       }
 //     })
 // };
-// getEvenOdd()
+// getEvenOdd();
+
+
+
   const handleMouseEnter = useCallback((boxNumber:number) => {
     if(isMouseDown){
       const startBox = selectedBox[0]; //start jise darg shuru
