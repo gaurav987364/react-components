@@ -74,3 +74,8 @@ const progressBarwidth = ()=>{
 }}>
  <div class="h-full bg-green-500" style={{width: `${progressBarwidth}%`}}></div>
 </div>
+
+
+
+
+*******Implment the Logic for syncing of popstate and also for keyboard navigaation
