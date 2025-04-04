@@ -35,6 +35,7 @@ const GridLight = () => {
   const doLightOff = ()=>{
     const intervalId = setInterval(() => {
         setStack((prev)=>{
+          // console.log(prev.keys())
             // Remove the last item from the stack (which is the last selected light) and decrement the size of the stack
             const lastItem = Array.from(prev.keys()).pop();
             const newStack = new Map(prev);
