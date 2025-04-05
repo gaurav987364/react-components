@@ -36,11 +36,11 @@ const Buttons = ({leftItems, rightItems,setLeftItems,setRightItems}:Props) => {
         })
     };
 
-  //disabled button function when no items are selected
-  const isDisabled = (items: Record<string, boolean>):boolean => {
-    // Check if all items are unchecked or there is any true value in the items object
-    return Object.values(items).every((value) => !value);
-  };
+    //disabled button function when no items are selected
+    const isDisabled = (items: Record<string, boolean>):boolean => {
+        // Check if all items are unchecked or there is any true value in the items object
+        return Object.values(items).every((value) => !value);
+    };
 
 
   return (

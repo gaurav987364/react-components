@@ -36,9 +36,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 343.20001220703125,
-			"y": 400,
-			"lastActivityTimestamp": 1743756260013,
+			"x": 973.2587092954492,
+			"y": 1560.835175240174,
+			"lastActivityTimestamp": 1743858864868,
 			"meta": {}
 		},
 		{
@@ -155,6 +155,93 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 678.2606289857454,
+			"y": 52.85378527619392,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:wqcILv3XoA5Hy9vvlo6wS",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "s",
+				"w": 508.6000061035156,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "convertArrayToObject = (obj)=>{"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "   return Object.keys(obj).reduce((acc,curr)=>{"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "     acc[curr] = false;"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    },{})"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "}"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aO9py",
+			"typeName": "shape"
+		},
+		{
 			"x": 240.8000030517578,
 			"y": 365.6000061035156,
 			"rotation": 0,
@@ -189,6 +276,36 @@
 			},
 			"parentId": "page:page",
 			"index": "a825e",
+			"typeName": "shape"
+		},
+		{
+			"x": 853.919683292003,
+			"y": 431.95982089274844,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:4pwrwS8qYn4VHDDYw8VZ5",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "s",
+				"w": 20,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aR0rs",
 			"typeName": "shape"
 		},
 		{
@@ -266,12 +383,486 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 0,
-			"y": 0,
-			"z": 1,
+			"x": -146.56931479624166,
+			"y": -998.1306424480845,
+			"z": 0.8061068992154602,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
+		},
+		{
+			"x": 696.124219277456,
+			"y": 688.9977055811039,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:bjtmjoSurkrN-SxXrwSaV",
+			"type": "text",
+			"props": {
+				"color": "orange",
+				"size": "s",
+				"w": 1221.4000244140625,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Now our task is to disable the buttons for some conditions like :-"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "1.) disable the buttons when no items are selected/checked;"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    means we convert the object into array and apply every method on that"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    in which we check every item has value of !false means every items ahs pass"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    test by every method;"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "     we create one idDisabled function = (itemsList)=>{"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "         return Object.keys(itemsList).every(value => !value)"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "     }"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "      disabled={isDisbaled(leftList/rightList)}"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "2.) disable the buttons when there is no items or list in the left/right"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    disabled={Object.keys(leftList).length === 0}"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    disabled={Object.keys(rightList).length === 0}"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "3.) now we have to make two most important functions:--"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    a.) MoveAllItems = ({itemsList,itemSrc,setItemDst})=>{"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "          setItemDst(prev => ({...prev, ...itemsList}))"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "          "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "          itemsSrc({});"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "        };"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "        "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "        onclick={MoveAllItems({itemList:leftList, itemSrc:leftList, setItemsDst:setRight})};"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    b.) MoveSelectedItems = ({itemsList, itemsSrc, setItemsDst})=>{"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "           setItemsDst(prev => ({"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "               ...Object.fromEntries(Object.entries(itemsList).filter([, value])=> value) // taking true only"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "               ...prev"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "           }));"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "           itemsSrc(prev =>{"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "             return Object.fromEntries(Object.entries(itemsList).filter([, value])=> !value) // taking false only"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "           })"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "        };"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aY1f2",
+			"typeName": "shape"
+		},
+		{
+			"x": 670.3212050454574,
+			"y": -27.612876940474493,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:UfGiYwMPNN-Q3edu0KjiV",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 709.9375,
+				"font": "sans",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "[right, setRight] = useState(convertObjectToArray(RIGHT_LIST));"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aNA8T",
+			"typeName": "shape"
 		},
 		{
 			"x": 352.27821826959047,
@@ -349,12 +940,886 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": null,
+			"x": 877.7378793969086,
+			"y": 449.07194249864335,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:pqEqDT7QEEvcLdh15qsyj",
+			"type": "draw",
+			"props": {
+				"segments": [
+					{
+						"type": "free",
+						"points": [
+							{
+								"x": 0,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 5.95,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 13.89,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 18.86,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 23.82,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 26.8,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 29.77,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 32.75,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 35.73,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 38.7,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 41.68,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 45.65,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 49.62,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 53.59,
+								"y": 1.98,
+								"z": 0.5
+							},
+							{
+								"x": 58.55,
+								"y": 1.98,
+								"z": 0.5
+							},
+							{
+								"x": 61.53,
+								"y": 1.98,
+								"z": 0.5
+							},
+							{
+								"x": 65.5,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 69.47,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 76.42,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 81.38,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 84.36,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 88.33,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 91.3,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 94.28,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 98.25,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 101.23,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 105.2,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 109.17,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 112.14,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 115.12,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 118.1,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 122.07,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 125.05,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 131,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 134.97,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 141.92,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 147.87,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 153.83,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 155.81,
+								"y": 2.98,
+								"z": 0.5
+							},
+							{
+								"x": 158.79,
+								"y": 1.98,
+								"z": 0.5
+							},
+							{
+								"x": 161.77,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 165.73,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 170.7,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 172.68,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 175.66,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 179.63,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 184.59,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 187.57,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 191.54,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 193.52,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 197.49,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 201.46,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 207.42,
+								"y": -0.99,
+								"z": 0.5
+							},
+							{
+								"x": 212.38,
+								"y": -0.99,
+								"z": 0.5
+							},
+							{
+								"x": 217.34,
+								"y": -0.99,
+								"z": 0.5
+							},
+							{
+								"x": 223.3,
+								"y": -1.98,
+								"z": 0.5
+							},
+							{
+								"x": 229.25,
+								"y": -1.98,
+								"z": 0.5
+							},
+							{
+								"x": 237.19,
+								"y": -1.98,
+								"z": 0.5
+							},
+							{
+								"x": 243.14,
+								"y": -1.98,
+								"z": 0.5
+							},
+							{
+								"x": 249.1,
+								"y": -1.98,
+								"z": 0.5
+							},
+							{
+								"x": 255.05,
+								"y": -2.98,
+								"z": 0.5
+							},
+							{
+								"x": 260.02,
+								"y": -2.98,
+								"z": 0.5
+							},
+							{
+								"x": 264.98,
+								"y": -2.98,
+								"z": 0.5
+							},
+							{
+								"x": 270.93,
+								"y": -2.98,
+								"z": 0.5
+							},
+							{
+								"x": 276.89,
+								"y": -3.97,
+								"z": 0.5
+							},
+							{
+								"x": 281.85,
+								"y": -4.96,
+								"z": 0.5
+							},
+							{
+								"x": 284.83,
+								"y": -4.96,
+								"z": 0.5
+							},
+							{
+								"x": 288.8,
+								"y": -5.95,
+								"z": 0.5
+							},
+							{
+								"x": 290.78,
+								"y": -5.95,
+								"z": 0.5
+							},
+							{
+								"x": 292.77,
+								"y": -5.95,
+								"z": 0.5
+							},
+							{
+								"x": 293.76,
+								"y": -5.95,
+								"z": 0.5
+							},
+							{
+								"x": 295.74,
+								"y": -5.95,
+								"z": 0.5
+							},
+							{
+								"x": 301.7,
+								"y": -7.94,
+								"z": 0.5
+							},
+							{
+								"x": 305.67,
+								"y": -7.94,
+								"z": 0.5
+							},
+							{
+								"x": 309.64,
+								"y": -8.93,
+								"z": 0.5
+							},
+							{
+								"x": 312.61,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 314.6,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 317.58,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 319.56,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 328.49,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 333.45,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 342.39,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 347.35,
+								"y": -9.92,
+								"z": 0.5
+							},
+							{
+								"x": 349.33,
+								"y": -9.92,
+								"z": 0.5
+							}
+						]
+					}
+				],
+				"color": "red",
+				"fill": "none",
+				"dash": "draw",
+				"size": "s",
+				"isComplete": true,
+				"isClosed": false,
+				"isPen": false,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "aU0NM",
+			"typeName": "shape"
+		},
+		{
+			"x": 1200.275746586786,
+			"y": 417.3143981694079,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:zAESadbO6oXRta2lVPEJa",
+			"type": "draw",
+			"props": {
+				"segments": [
+					{
+						"type": "free",
+						"points": [
+							{
+								"x": 0,
+								"y": 0,
+								"z": 0.5
+							},
+							{
+								"x": 2.98,
+								"y": 0.99,
+								"z": 0.5
+							},
+							{
+								"x": 10.92,
+								"y": 4.96,
+								"z": 0.5
+							},
+							{
+								"x": 15.88,
+								"y": 7.94,
+								"z": 0.5
+							},
+							{
+								"x": 19.85,
+								"y": 8.93,
+								"z": 0.5
+							},
+							{
+								"x": 26.8,
+								"y": 13.89,
+								"z": 0.5
+							},
+							{
+								"x": 27.79,
+								"y": 14.89,
+								"z": 0.5
+							},
+							{
+								"x": 30.77,
+								"y": 15.88,
+								"z": 0.5
+							},
+							{
+								"x": 33.74,
+								"y": 16.87,
+								"z": 0.5
+							},
+							{
+								"x": 36.72,
+								"y": 18.86,
+								"z": 0.5
+							},
+							{
+								"x": 40.69,
+								"y": 20.84,
+								"z": 0.5
+							},
+							{
+								"x": 44.66,
+								"y": 22.83,
+								"z": 0.5
+							},
+							{
+								"x": 46.64,
+								"y": 23.82,
+								"z": 0.5
+							},
+							{
+								"x": 47.64,
+								"y": 23.82,
+								"z": 0.5
+							},
+							{
+								"x": 47.64,
+								"y": 24.81,
+								"z": 0.5
+							},
+							{
+								"x": 47.64,
+								"y": 25.8,
+								"z": 0.5
+							},
+							{
+								"x": 46.64,
+								"y": 25.8,
+								"z": 0.5
+							},
+							{
+								"x": 43.67,
+								"y": 28.78,
+								"z": 0.5
+							},
+							{
+								"x": 41.68,
+								"y": 28.78,
+								"z": 0.5
+							},
+							{
+								"x": 38.7,
+								"y": 31.76,
+								"z": 0.5
+							},
+							{
+								"x": 36.72,
+								"y": 32.75,
+								"z": 0.5
+							},
+							{
+								"x": 33.74,
+								"y": 33.74,
+								"z": 0.5
+							},
+							{
+								"x": 32.75,
+								"y": 33.74,
+								"z": 0.5
+							},
+							{
+								"x": 29.77,
+								"y": 35.73,
+								"z": 0.5
+							},
+							{
+								"x": 27.79,
+								"y": 36.72,
+								"z": 0.5
+							},
+							{
+								"x": 23.82,
+								"y": 38.7,
+								"z": 0.5
+							},
+							{
+								"x": 21.83,
+								"y": 39.7,
+								"z": 0.5
+							},
+							{
+								"x": 19.85,
+								"y": 39.7,
+								"z": 0.5
+							},
+							{
+								"x": 18.86,
+								"y": 40.69,
+								"z": 0.5
+							},
+							{
+								"x": 15.88,
+								"y": 40.69,
+								"z": 0.5
+							},
+							{
+								"x": 11.91,
+								"y": 42.67,
+								"z": 0.5
+							},
+							{
+								"x": 10.92,
+								"y": 43.67,
+								"z": 0.5
+							},
+							{
+								"x": 8.93,
+								"y": 43.67,
+								"z": 0.5
+							},
+							{
+								"x": 6.95,
+								"y": 43.67,
+								"z": 0.5
+							},
+							{
+								"x": 6.95,
+								"y": 44.66,
+								"z": 0.5
+							},
+							{
+								"x": 5.95,
+								"y": 44.66,
+								"z": 0.5
+							},
+							{
+								"x": 4.96,
+								"y": 45.65,
+								"z": 0.5
+							}
+						]
+					}
+				],
+				"color": "red",
+				"fill": "none",
+				"dash": "draw",
+				"size": "s",
+				"isComplete": true,
+				"isClosed": false,
+				"isPen": false,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "aV8Ni",
+			"typeName": "shape"
+		},
+		{
+			"x": 689.1772801166726,
+			"y": 295.00528793448854,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:mwHWEgpUSYzG5DWxgUUWV",
+			"type": "text",
+			"props": {
+				"color": "blue",
+				"size": "s",
+				"w": 659.7999877929688,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "{Object."
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "entries"
+								},
+								{
+									"type": "text",
+									"text": "(items)."
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "map"
+								},
+								{
+									"type": "text",
+									"text": "(([key, value], index) => ("
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "        <div key={index} className='flex items-center gap-2'>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "          <input "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "            type=\"checkbox\" "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "            checked={value} "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "            onChange={()=>{"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "              "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "            }} "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "            className='w-4 h-4 cursor-pointer'"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "          />"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "          <label htmlFor={key}>{key}</label>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "        </div>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "      ))}"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aQB3n",
+			"typeName": "shape"
+		},
+		{
+			"editingShapeId": "shape:bjtmjoSurkrN-SxXrwSaV",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:ykVMDYVqZ9PV5uwa8gBKA"
+				"shape:bjtmjoSurkrN-SxXrwSaV"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:bjtmjoSurkrN-SxXrwSaV",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -551,6 +2016,39 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 867.8136373295279,
+			"y": 437.91438884796435,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:bJsBCd2j4QNycxIG3GdiR",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "s",
+				"w": 16,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aT0Td",
+			"typeName": "shape"
+		},
+		{
 			"x": 244.8000030517578,
 			"y": 488.8000183105469,
 			"rotation": 0,
@@ -585,6 +2083,57 @@
 			},
 			"parentId": "page:page",
 			"index": "a96KP",
+			"typeName": "shape"
+		},
+		{
+			"x": 669.3287202659529,
+			"y": -99.06741083434655,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:rH-g0WSydUksJgSUFWKAj",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 661.0750122070312,
+				"font": "sans",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "we need two states for render the lists left/right--"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "[left, setLeft] = useState(convertObjectToArray(LEFT_LIST));"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aMB8T",
 			"typeName": "shape"
 		},
 		{
@@ -697,6 +2246,57 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 1339.2151355301178,
+			"y": 525.3279996899108,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:cGhCaxHzWZ6_tc9UPmIS6",
+			"type": "text",
+			"props": {
+				"color": "blue",
+				"size": "s",
+				"w": 281.8000183105469,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "we are toggle the checkbox"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "for each item;"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aXBSK",
+			"typeName": "shape"
+		},
+		{
 			"x": 242.40000915527344,
 			"y": 420,
 			"rotation": 0,
@@ -731,6 +2331,45 @@
 			},
 			"parentId": "page:page",
 			"index": "aA1fE",
+			"typeName": "shape"
+		},
+		{
+			"x": 810.2530030523357,
+			"y": 1195.3821532834136,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:yUgbU9-DoysyGGZvHf1Y6",
+			"type": "text",
+			"props": {
+				"color": "blue",
+				"size": "s",
+				"w": 659.7999877929688,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "we basically set the items from one object to another simple;"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aZ0j3",
 			"typeName": "shape"
 		},
 		{
@@ -789,8 +2428,8 @@
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
 				"tldraw:size": "s",
-				"tldraw:font": "sans",
-				"tldraw:geo": "rectangle"
+				"tldraw:font": "mono",
+				"tldraw:color": "blue"
 			},
 			"brush": null,
 			"scribbles": [],
@@ -805,7 +2444,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 720,
+				"w": 1488,
 				"h": 702.4000244140625
 			},
 			"insets": [
@@ -868,6 +2507,57 @@
 			},
 			"parentId": "page:page",
 			"index": "aLAab",
+			"typeName": "shape"
+		},
+		{
+			"x": 682.2302652399311,
+			"y": 211.64167728327686,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:vhV8Hg2LhxNhdRCt-f1Wi",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "s",
+				"w": 854.2000122070312,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Now we have to render the list but we have to make the ItemsList.tsx component;"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "so that we pass the object and setter functio for that object ok;"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aPBaG",
 			"typeName": "shape"
 		},
 		{
@@ -942,6 +2632,135 @@
 			},
 			"parentId": "page:page",
 			"index": "aG19L",
+			"typeName": "shape"
+		},
+		{
+			"x": 1309.4424093279754,
+			"y": 382.3386105558442,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:p1-R2lycr3YFfzpZjpU7U",
+			"type": "text",
+			"props": {
+				"color": "light-green",
+				"size": "s",
+				"w": 238.60000610351562,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "if(setItems){"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "  setItems(prev => ({"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    ...prev,"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    [key] : !prev[key]"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "  }) )"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "}"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aW6J6",
+			"typeName": "shape"
+		},
+		{
+			"x": 863.8439253593839,
+			"y": 430.967411829202,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:76ifiot88QkH6MGjj5EB6",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "s",
+				"w": 20,
+				"font": "mono",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aS5nN",
 			"typeName": "shape"
 		},
 		{
