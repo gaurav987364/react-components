@@ -27,7 +27,7 @@ target 2 in one day.
 23.composition in react?
 24.sepration fo concerns(view,integration,service)?
 25.Dependency injection(Ioc)?
-26.Lazy load and suspence?
+26.Lazy load and suspence?✅
 27.zustand seekhlo maann kre to?
 28.How to test (Jest or something)?
 
