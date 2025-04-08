@@ -186,4 +186,4 @@ const NestedComm = () => {
   )
 }
 
-export default NestedComm
+export default NestedComm;
