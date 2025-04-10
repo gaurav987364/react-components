@@ -1,0 +1,48 @@
+Problem statement :-
+
+1. Make the Proper sturcture based on given data;
+2. if we check the parent check box all the childs shuld be checked;
+3. if we checked all the childs the parent of those will automatically checked.
+
+const dummyData = [
+  {
+    id: '1',
+    label: 'Fruits',
+    checked: false,
+    children: [
+      { id: '1.1', label: 'Apple', checked: false },
+      { id: '1.2', label: 'Orange', checked: false },
+      {
+        id: '1.3',
+        label: 'Berries',
+        checked: false,
+        children: [
+          { id: '1.3.1', label: 'Strawberry', checked: false },
+          { id: '1.3.2', label: 'Blueberry', checked: false }
+        ]
+      }
+    ]
+  },
+  {
+    id: '2',
+    label: 'Vegetables',
+    checked: false,
+    children: [
+      { id: '2.1', label: 'Carrot', checked: false },
+      { id: '2.2', label: 'Broccoli', checked: false }
+    ]
+  }
+];
+
+
+// after done with step-1 move forward with second requirement
+ 
+Here we use the concept of propagaration of javascript :-
+
+event delegation, capturing, bubbling ok
+
+Downward propagaration :- when we toggle a parent, you want to update all of its childrens to checked;
+
+Upward propagaration :- when a child is toggled, we want the parent checked state to reflect the state of its children (if every child is checked, then the parent is checked , otherwise, it is not or inderminate state);
+
+// More requirements :-
