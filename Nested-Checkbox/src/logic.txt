@@ -4,6 +4,8 @@ Problem statement :-
 2. if we check the parent check box all the childs shuld be checked;
 3. if we checked all the childs the parent of those will automatically checked.
 
+// More requirements :-
+
 const dummyData = [
   {
     id: '1',
@@ -39,10 +41,65 @@ const dummyData = [
  
 Here we use the concept of propagaration of javascript :-
 
-event delegation, capturing, bubbling ok
 
 Downward propagaration :- when we toggle a parent, you want to update all of its childrens to checked;
 
 Upward propagaration :- when a child is toggled, we want the parent checked state to reflect the state of its children (if every child is checked, then the parent is checked , otherwise, it is not or inderminate state);
 
-// More requirements :-
+
+steps :-
+
+=> we recieve two things (id and true for all boxes) using onChange(()=> handleToggle(item.id, !item.checked));
+
+=> handleToggle = (id, isChecked)=>{
+  let updatedTree = updateTreeWithNewNode(tree, id, isChecked);
+
+  updatedTree = updateParentsNode(updatedTree);
+  setTree(updatedTree);
+};
+
+=> updateTreeWithNewNode = (treeArray, targetId, isChecked)=>{
+  return treeArray?.map(item => {
+    if(item.id === targetId){
+      return updateDownWardNode(item, isChecked);
+    } else if (item.childrens){
+      return {...item, children:updateTreeWithNewNode(item.children,targetId, isChecked)}
+    }
+    return item;
+  })
+}
+
+=> updateDownWardNode = (node, isChecked)=>{
+  const updatedNode = {...node, checked:isChecked}
+
+  if(node.children){
+    updatedNode.children = node.children.map(child => updateDownWardNode(child,isChecked))
+  }
+  return updatedNode;
+}
+
+=> updateParentsNode = (updatedTreeArray)=>{
+  return updatedTreeArray.map(item =>{
+    if(item.children && item.children.length){
+      const updatedChildrens = updateParentsNode(item.children);
+
+      const allChildrenChecked = updatedChildren.every(child => child.checked);
+
+      return {...item, checked:allChildrenChecked, children:updatedChildrens}
+    }
+    return item;
+  })
+};
+
+
+// Bas thode bhaute or features Improvements kar skte hai, like vs code sidebar ki taraha;
+
+
+
+Future Improvements (if you're interested)
+
+Add indeterminate state if some but not all children are checked.
+
+Add expand/collapse toggle for subtrees.
+
+Animate node transitions (Framer Motion etc.)
