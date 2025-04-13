@@ -13,10 +13,6 @@ interface MoveAllItemsParams {
     setItemsDst: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
 };
 
-
-
-
-
 const Buttons = ({leftItems, rightItems,setLeftItems,setRightItems}:Props) => {
 
     // Function to handle the transfer of items between lists
