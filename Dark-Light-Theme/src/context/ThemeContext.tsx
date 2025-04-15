@@ -19,6 +19,7 @@ export const ThemeProvider = ({children}: {children : React.ReactNode})=>{
         }
     }
 
+    //wromg ha
     //const value = useMemo(()=>{mode,setMode},[mode]);
 
     useEffect(()=>{
