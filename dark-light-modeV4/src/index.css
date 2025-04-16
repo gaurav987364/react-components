@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+ /* we have to add this thing otherwise toggle theme not work or classes wont apply */
+@custom-variant dark (&:where(.dark, .dark *))

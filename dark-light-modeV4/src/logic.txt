@@ -1,0 +1,17 @@
+Dark-Light-Theme :-
+
+1.implement theme switcher,
+
+2.with prop drilling = {
+    this is the worst way of doint it, best way is used context api which is used for small data or contextual state management, state mgm.lib. are also not good option here because they used for heavy-large scale data application ok;
+}.
+
+3.with context api,
+
+4. 3 way to do it ={
+    1. adding light-dark class on body (this is not good),
+    2. adding light-dark class on html and write css accordingly,
+    3. prefers-color-scheme : dark; ( accordingly to system ).
+}
+
+Note:-  implement dark-light-theme using latest tailwind v4;
