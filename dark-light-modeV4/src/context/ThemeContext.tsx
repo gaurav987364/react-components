@@ -3,7 +3,10 @@ import React, { createContext, useContext,useEffect,useState } from "react";
 interface ThemeContextType {
     mode: boolean;
     setMode: (mode: boolean) => void;
-}
+};
+
+
+
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({children}: {children : React.ReactNode})=>{
@@ -32,7 +35,7 @@ export const ThemeProvider = ({children}: {children : React.ReactNode})=>{
             {children}
         </ThemeContext.Provider>
     )
-}
+};
 
 
 export const useTheme = ()=>{
@@ -41,4 +44,4 @@ export const useTheme = ()=>{
         throw new Error("useTheme must be used within a ThemeProvider");
     }
     return context;
-}
+};
