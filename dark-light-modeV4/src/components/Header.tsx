@@ -1,5 +1,5 @@
-import { IoIosMoon, IoIosSunny } from 'react-icons/io'
-import { useTheme } from '../context/ThemeContext'
+import { IoIosMoon, IoIosSunny } from 'react-icons/io';
+import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
     const {mode,setMode} = useTheme();
@@ -24,4 +24,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
