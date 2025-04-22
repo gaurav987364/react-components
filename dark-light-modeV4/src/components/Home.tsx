@@ -36,23 +36,4 @@ const Home = () => {
 
 export default Home;
 
-//pure dots bg
-<div className="w-full absolute min-h-screen inset-0 -z-10">
-  {/* Light theme */}
-  <div
-    className="absolute inset-0 dark:hidden"
-    style={{
-      backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px)`,
-      backgroundSize: "20px 20px",
-    }}
-  />
 
-  {/* Dark theme */}
-  <div
-    className="absolute inset-0 hidden dark:block"
-    style={{
-      backgroundImage: `radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px)`,
-      backgroundSize: "20px 20px",
-    }}
-  />
-</div>
