@@ -1,0 +1,22 @@
+Arrow Key Navigation:
+
+Calculate next/previous index based on current button's index
+
+Wrap around using modulo operations
+
+Update active item state and focus the new tab
+
+Space/Enter Handling:
+
+Removed unnecessary focus change logic since it's already handled by the onClick event
+
+React's default behavior already triggers onClick for space/enter
+
+Prevent Default:
+
+Added event.preventDefault() to prevent page scrolling with arrow keys
+
+
+
+
+To persist form data across tab switches while maintaining accessibility and component state, we'll need to keep all tab panels mounted but visually hidden when inactive. Here's how to modify your component:

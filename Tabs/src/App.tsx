@@ -1,5 +1,6 @@
 import React from 'react';
 import Tab from './components/Tab';
+import Form from './components/test-componnets/Form';
 
 const App:React.FC = () => {
   return (
@@ -8,17 +9,17 @@ const App:React.FC = () => {
      defaultTab={1}
       tablist={[
         {
-          lable:"Left",
+          label:"Left",
           id:1,
-          Component:()=><div>Hi</div>
+          Component:()=><Form/>
         },
         {
-          lable:"Mid",
+          label:"Mid",
           id:2,
           Component:()=><div>Ok</div>
         },
         {
-          lable:"Right",
+          label:"Right",
           id:3,
           Component:()=><div>Done</div>
         },
