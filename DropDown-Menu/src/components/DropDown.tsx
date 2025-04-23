@@ -30,7 +30,7 @@ const DropDown = ({content, titleBtn}:Props) => {
   const toggle = ()=>{
     if (!open) {//+
       const btnRect = btnRef.current?.getBoundingClientRect();
-      let spaceLeft;
+      let spaceLeft;      
       if (btnRect) {//+
          spaceLeft = window.innerHeight - btnRect.bottom;
       }
