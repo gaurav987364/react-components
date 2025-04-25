@@ -3,7 +3,7 @@ import { useState } from "react"
 
 const AgeCalculater = () => {
     const [date, setDate] = useState("");
-    const [age, setAge] = useState(0)
+    const [age, setAge] = useState(0);
 
     const calculateAge = ()=>{
         const today = new Date();
