@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState, useRef } from "react";
+
 const StopWatch = () => {
     const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
