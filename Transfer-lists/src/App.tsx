@@ -1,10 +1,11 @@
-import ListUi from './components/ListUi';
+// import ListUi from './components/ListUi';
+import TLP from './practice/TLP';
 
 const App = () => {
   return (
-    <div className=' w-fit h-fit mx-auto mt-5 flex'>
+    <div className=' w-full h-full justify-center mx-auto mt-5 flex'>
       <div>
-        <ListUi /> 
+        <TLP/>
       </div>
     </div>
   )

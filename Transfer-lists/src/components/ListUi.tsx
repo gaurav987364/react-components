@@ -9,16 +9,24 @@ const ListUi = () => {
 
   return (
     <div className='flex justify-around items-center h-full w-full'>
-      <ItemsList className=' font-thin italic border p-5 space-y-1' items={left} setItems={setLeft}/>
+      <ItemsList 
+        className=' font-thin italic border p-5 space-y-1' 
+        items={left} 
+        setItems={setLeft}
+      />
 
-       <Buttons
+      <Buttons
         leftItems={left}
         rightItems={right}
         setLeftItems={setLeft}
         setRightItems={setRight}
-       />
+      />
 
-      <ItemsList className=' font-thin italic border p-5 space-y-1' items={right} setItems={setRight}/>
+      <ItemsList 
+        className=' font-thin italic border p-5 space-y-1' 
+        items={right} 
+        setItems={setRight}
+      />
     </div>
   )
 }
