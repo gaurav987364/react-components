@@ -1,9 +1,11 @@
 import GridLight from "./components/GridLight"
+import GridLightPractice from "./components/GridLightPractice"
 
 const App = () => {
   return (
     <div>
-      <GridLight/>
+      {/* <GridLight/> */}
+      <GridLightPractice/>
     </div>
   )
 }
