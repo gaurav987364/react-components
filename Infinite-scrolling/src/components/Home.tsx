@@ -43,23 +43,23 @@ const Home = () => {
         }
     };
 
-    const throttle = (func :any, limit: number) => {
-        let lastFunc: any;
+    const throttle = (func :any, delay: number) => {
+        let timer: any;
         let lastRan: number;
       
-        return function (...args: any) {
-          const context   = this;
+        return (...args: any) => {
+          const context = null;
           if (!lastRan) {
             func.apply(context, args);
             lastRan = Date.now();
           } else {
-            clearTimeout(lastFunc);
-            lastFunc = setTimeout(() => {
-              if (Date.now() - lastRan >= limit) {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+              if (Date.now() - lastRan >= delay) {
                 func.apply(context, args);
                 lastRan = Date.now();
               }
-            }, limit - (Date.now() - lastRan));
+            }, delay - (Date.now() - lastRan));
           }
         };
       };
