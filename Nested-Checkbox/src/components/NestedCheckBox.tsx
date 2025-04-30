@@ -5,7 +5,7 @@ interface NestcheckBoxProps {
     label:string;
     checked:boolean;
     children?:NestcheckBoxProps[]
-}
+};
 
 const NestedCheckBox:React.FC = () => {
     const [tree,setTree] = useState<NestcheckBoxProps[]>([
@@ -142,4 +142,4 @@ const NestedCheckBox:React.FC = () => {
   )
 }
 
-export default NestedCheckBox
+export default NestedCheckBox;
