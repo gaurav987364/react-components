@@ -7,6 +7,7 @@ type LetterObjectType = Record<string,number>;
 export const useFetchWord = () => {
     const [correctWord,setCorrectWord] = useState<string>("");
     const [correctLetterObj,setCorrectLetterObj] = useState({});
+    const [loading, setLoading] = useState<boolean>(true);
 
     const getWords = async ()=>{
         try {
@@ -18,21 +19,22 @@ export const useFetchWord = () => {
     
             //find word based on random index
             const word = data[randomIndex].word;
-            console.log(word);
+            console.log(word.toUpperCase());
     
             //create letter object;
             const letterObject:LetterObjectType = {};
-            console.log("letter obj:", letterObject)
 
             for(const letter of word){
-                letterObject[letter] = (letterObject[letter] || 0) + 1;
+                letterObject[letter.toUpperCase()] = (letterObject[letter.toUpperCase()] || 0) + 1;
             }
 
             //setting words
-            setCorrectWord(word);
+            setCorrectWord(word.toUpperCase());
             setCorrectLetterObj(letterObject);
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -43,6 +45,7 @@ export const useFetchWord = () => {
 
     return{
         correctWord,
-        correctLetterObj
+        correctLetterObj,
+        loading
     }
 }

@@ -17,7 +17,7 @@ const LandingPage: React.FC = () => {
       <section className="flex flex-col items-center text-center px-4 py-20">
         <h2 className="text-5xl font-extrabold mb-4">Guess the Word!</h2>
         <p className="text-xl mb-8">Challenge yourself with our Wordle clone.</p>
-        <Link to="/game" className="bg-[#1DCD9F] text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#169976] transition">
+        <Link to="/gamepage" className="bg-[#1DCD9F] text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#169976] transition">
           <FaPlay /> Play Now
         </Link>
       </section>
