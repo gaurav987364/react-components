@@ -17,6 +17,9 @@ const App = () => {
         <Toaster
           reverseOrder={false}
           position="top-center"
+          toastOptions={{
+            duration: 1500,
+          }}
         />
     </ThemeProvider>
     </>

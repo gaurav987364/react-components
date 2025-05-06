@@ -3,14 +3,14 @@ import React, { memo } from 'react';
 interface Props {
   letter:string;
   green?:boolean;
-  yellow?:boolean
+  yellow?:boolean;
 };
 
 
 const Letter:React.FC<Props>  = ({
-  letter,
-  green,
-  yellow
+  letter = '',
+  green = false,
+  yellow = false,
 }) => {
   return (
     <div className={`w-14 h-14 flex items-center justify-center border-2 rounded 

@@ -1,3 +1,52 @@
 @import "tailwindcss";
+@import "tailwindcss-animated";
 
 @custom-variant dark (&:where(.dark, .dark *))
+
+@keyframes fade_in_start {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade_in_content {
+    animation: fade_in_start 0.3s ease-in forwards;
+}
+.fade_in_overlay {
+    animation: fade_in_start 0.2s linear forwards;
+}
+
+
+/* Add these to your global CSS */ 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+  
+  /* Animation classes */
+  .bg-opacity-50 {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .rounded-lg {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  /* Responsive overflow handling */
+  @media (max-height: 640px) {
+    .max-h-90vh {
+      max-height: 85vh;
+    }
+  }
