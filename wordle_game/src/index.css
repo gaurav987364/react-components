@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
 
-@custom-variant dark (&:where(.dark, .dark *))
-
 @keyframes fade_in_start {
     from {
         opacity: 0;
@@ -50,3 +48,4 @@
       max-height: 85vh;
     }
   }
+@custom-variant dark (&:where(.dark, .dark *))
