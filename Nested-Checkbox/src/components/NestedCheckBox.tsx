@@ -4,7 +4,7 @@ interface NestcheckBoxProps {
     id:string;
     label:string;
     checked:boolean;
-    children?:NestcheckBoxProps[]
+    children?:NestcheckBoxProps[];
 };
 
 const NestedCheckBox:React.FC = () => {
@@ -133,7 +133,7 @@ const NestedCheckBox:React.FC = () => {
   return (
     <div className=' w-96 h-auto border rounded'>
         <div>
-            <h1 className=' font-semibold text-lg text-pink-600 text-center mt-2'>Nested CheckBox Problem</h1>
+            <h1 className=' font-semibold text-lg text-pink-600 text-center mt-2'>Nested CheckBox Problem!</h1>
         </div>
         <div className=' mt-4 bg-slate-700 rounded-md p-3 shadow-md overflow-auto h-full'>
             {renderCheckBox(tree)}
