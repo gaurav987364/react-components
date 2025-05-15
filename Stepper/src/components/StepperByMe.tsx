@@ -75,7 +75,7 @@ const StepperByMe = ({ config }: Props) => {
                  ref={(iRef) => {
                     // @ts-ignore
                     stepRef.current[index] = iRef;
-                }} 
+                 }} 
                 key={item.name} 
                 className="w-full flex items-center flex-col">
                     <span
