@@ -1,8 +1,8 @@
 // import Accordian from "./components/Accordian"
 
-import AgeCalculater from "./components/AgeCalculater"
-import StopWatch from "./components/StopWatch"
-import TagInput from "./components/TagInput"
+import AgeCalculater from "./components/AgeCalculater";
+import StopWatch from "./components/StopWatch";
+import TagInput from "./components/TagInput";
 
 const App = () => {
   return (
@@ -15,4 +15,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
