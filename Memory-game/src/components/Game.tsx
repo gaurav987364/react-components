@@ -20,7 +20,7 @@ const Game = () => {
       [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
     return array;
-  }
+  };
 
   const handleClick = (index: number) => {
     if (firstClickIndex === null) {
