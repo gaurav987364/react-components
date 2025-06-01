@@ -4,12 +4,12 @@ interface TabType {
     label: string;
     id: number;
     Component: FC;
-}
+};
 
 interface Props {
     tablist: TabType[];
     defaultTab?: number;
-}
+};
 
 const Tab: React.FC<Props> = ({
     tablist = [],
@@ -77,11 +77,11 @@ const Tab: React.FC<Props> = ({
            {
             tablist?.map((tabItem)=>(
                 <div 
-                    key={tabItem.id}
+                    key={tabItem?.id}
                     role='tabpanel' 
-                    id={`tabpanel-${tabItem.id}`}
-                    aria-labelledby={`tab-${tabItem.id}`}
-                    hidden={tabItem.id !== activeTab} //key-thing to remeber
+                    id={`tabpanel-${tabItem?.id}`}
+                    aria-labelledby={`tab-${tabItem?.id}`}
+                    hidden={tabItem?.id !== activeTab} //key-thing to remeber
                     className='p-4 w-full h-full mx-auto'
                 >
                   <tabItem.Component/>
