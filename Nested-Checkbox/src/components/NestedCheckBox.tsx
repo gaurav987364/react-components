@@ -131,7 +131,7 @@ const NestedCheckBox:React.FC = () => {
         )
     };
   return (
-    <div className=' w-96 h-auto border rounded'>
+    <div className=' w-96 h-auto border rounded-lg'>
         <div>
             <h1 className=' font-semibold text-lg text-pink-600 text-center mt-2'>Nested CheckBox Problem!</h1>
         </div>
