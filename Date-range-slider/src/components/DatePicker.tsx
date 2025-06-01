@@ -323,7 +323,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
   };
 
   return (
-    <div className={clsx("flex gap-0", dualCalendar && "shadow-lg")}>
+    <div className={clsx("flex gap-0.5", dualCalendar && "shadow-lg")}>
       {renderCalendar(selectedDate)}
       {dualCalendar && renderCalendar(nextMonthDate, true)}
     </div>
