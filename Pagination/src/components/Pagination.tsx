@@ -44,7 +44,7 @@ const Pagination = ({
     const maxButtons = 5;
     let buttonStartIndex = currentPage - Math.floor(maxButtons/2);
     let buttonEndIndex = currentPage + Math.floor(maxButtons/2);
-    //console.log(buttonStartIndex, buttonEndIndex) //-,3
+    //console.log(buttonStartIndex, buttonEndIndex) //-1,3 //5
 
     //if page less that 1
     if(buttonStartIndex < 1){
