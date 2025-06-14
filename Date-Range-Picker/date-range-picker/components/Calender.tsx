@@ -76,7 +76,7 @@ const Calender:React.FC<Props> = ({
 
   
   return (
-    <div className=' w-[300px] border p-0.5 mt-5 shadow-md shadow-gray-400/30 rounded'>
+    <div className=' w-[300px] border p-0.5 mt-5 shadow-md shadow-gray-400/20 rounded'>
       <div className=' grid grid-cols-7 items-center justify-center text-center'>
         {/* making header */}
         <Cell onClick={handelPrevYear}>{"<<"}</Cell>
