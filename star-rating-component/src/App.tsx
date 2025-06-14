@@ -1,5 +1,5 @@
-import { useState } from "react"
-import StarRating from "./components/StarRating"
+import { useState } from "react";
+import StarRating from "./components/StarRating";
 
 const App = () => {
   const [ratingCount, setRatingCount] = useState(0);
@@ -20,4 +20,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
