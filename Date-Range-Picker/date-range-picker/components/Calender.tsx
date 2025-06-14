@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Cell from './ui/Cell'
 import { EndOfMonth, format, getDaysInMonth, nextMonth, nextYear, prevMonth, prevYear, StartOfMonth } from '@/utils/util';
 //import { differenceInDays, endOfMonth, startOfMonth } from 'date-fns';
