@@ -1,7 +1,7 @@
 "use client"
 // import DateRangePicker from '@/components/DateRangePicker'
-import Calender from '@/components/Calender'
-import React, { useState } from 'react'
+import Calender from '@/components/Calender';
+import React, { useState } from 'react';
 
 const App = () => {
   // const [currentDate,setCurrentDate] = useState(new Date());
