@@ -6,7 +6,7 @@ type RangeSliderType = {
   onChange?: Dispatch<SetStateAction<number[]>>;
   value?: number[];
   step?: number;
-}
+};
 
 
 const RangeSlider : React.FC<RangeSliderType> = ({
