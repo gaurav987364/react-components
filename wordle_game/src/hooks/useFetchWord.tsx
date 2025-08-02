@@ -48,4 +48,4 @@ export const useFetchWord = () => {
         correctLetterObj,
         loading
     }
-}
+};
