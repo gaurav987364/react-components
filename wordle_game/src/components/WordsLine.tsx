@@ -41,7 +41,7 @@ const WordsLine:React.FC<Props> = ({
     }
   return (
     <div className={`flex flex-row space-x-1 p-0.5`}>
-        {guess.split('').map((letter,index) => {
+        {guess?.split('')?.map((letter,index) => {
             return (
                 <Letter
                  letter={letter}
