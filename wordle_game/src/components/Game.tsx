@@ -260,7 +260,7 @@ const Game:React.FC = () => {
     )}
   
     <div>
-      {guessedWords.map((word, index) => {
+      {guessedWords?.map((word, index) => {
         if(index === wordCount && !gameOver){
           return (
             <div 
