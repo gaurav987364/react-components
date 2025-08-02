@@ -3,11 +3,12 @@ import LandingPage from "./pages/LandingPage";
 import GamePage from "./pages/GamePage";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "./context/ThemeContext";
+import Practice from "./components/Practice";
 
 const App = () => {
   return (
     <>
-    <ThemeProvider>
+    {/* <ThemeProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage/>}/>
@@ -21,7 +22,10 @@ const App = () => {
             duration: 500,
           }}
         />
-    </ThemeProvider>
+    </ThemeProvider> */}
+    <div className=" w-full h-screen flex items-center justify-center">
+      <Practice/>
+    </div>
     </>
   )
 }
