@@ -166,7 +166,7 @@ const NestedComm = () => {
     };
   return (
     <div className=" p-4 w-full h-full bg-purple-300">
-        <h1 className=" text-2xl font-semibold">Nested Comments.</h1>
+        <h1 className=" text-2xl font-semibold">Nested Comments</h1>
         <div>
             <textarea 
                 value={input}
