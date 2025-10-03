@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import Comments from "./Comentgpt";
 interface Comments {
     id: number;
