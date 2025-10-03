@@ -5,7 +5,7 @@ import Practice from './components/Practice';
 
 const App = () => {
   return (
-    <div>
+    <div >
       {/* <Commentgpt/> */}
       <NestedComm/>
       {/* <Practice/> */}
