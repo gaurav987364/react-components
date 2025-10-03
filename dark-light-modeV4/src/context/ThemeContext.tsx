@@ -5,8 +5,6 @@ interface ThemeContextType {
     setMode: (mode: boolean) => void;
 };
 
-
-
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({children}: {children : React.ReactNode})=>{
